@@ -38,7 +38,7 @@ pikkus = 16.5 #float
 kas_kaib_koolis = True #bool
 print(f"vanus {vanus} on: {type(vanus)}")
 print(f"eesnimi {eesnimi} on: {type(eesnimi)}")
-print(f"pikkus {pikkus} on: {type(pikkus)}")
+print(f"pikkus {pikkus} on: {type(pikkus)}") 
 print(f"kas_käib_koolis {kas_kaib_koolis} on: {type(kas_kaib_koolis)}")
 
 
