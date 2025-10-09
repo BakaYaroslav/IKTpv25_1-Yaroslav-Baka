@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>285bfd8e-f9a9-4733-b660-bb9eaddd3c45</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Tund2Yaroslav.py</StartupFile>
+    <StartupFile>Teema2.Valikud.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,7 +22,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="IKTpv25_1_Yaroslav_Baka.py" />
-    <Compile Include="Tund2Yaroslav.py" />
+    <Compile Include="IKTpv25_1YaroslavBaka2.py" />
+    <Compile Include="Teema2.Valikud.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

@@ -70,7 +70,7 @@ print(f"Maatüki diagonaal on {d:.2f} ühikut")'''
 # Leidke järgnevast näiteprogrammist semantiline viga:
 '''aeg = int(input("Mitu tundi kulus sõiduks?: "))
 teepikkus = int(input("Mitu kilomeetrit sõitsid? "))
-kiirus = aeg / teepikkus
+kiirus = teepikkus / aeg
 
 printf"Sinu kiirus oli {kiirus} km/h")'''
 
