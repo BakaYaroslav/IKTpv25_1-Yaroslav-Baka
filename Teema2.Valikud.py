@@ -209,51 +209,164 @@ except:
 # Küsi inimeselt poes eraldi kas ta soovib osta piima, saia, leiba jne. Loo juhuslikud hinnad ja küsi mitu tükki tahad osta, kui tahad. Teata, mis summa maksma läheb(Kuva ekraanil tšekk).
 
 
+'''import random
 try:
-    import random
-    küsimus = input("Kas soovid osta piima, saia, leiba, muna? => ").lower()
-    if küsimus.isalpha():
-        try:
-            küsimus = input("Kas soovid osta piima? => ").lower()
-            if "piima" in küsimus:
-                piim = random.randint(1,3)
-                print(f"Piima hind on {piim} eurot")
-        except:
-            print("On viga andmetega")
-            try:
-                    küsimus = input("Kas soovid osta saia? => ").lower()
-                    if "sai" in küsimus:
-                        sai = random.randint(1,5)
-                        print(f"Sai hind on {sai} eurot")
-            except:
-                    print("On viga andmetega")
-                    try:
-                            küsimus = input("Kas soovid osta leiba? => ").lower()
-                            if "leiba" in küsimus:
-                                leib = random.randint(1,3)
-                                print(f"Leiva hind on {leib} eurot")
-                    except:
-                            print("On viga andmetega")
-                            try:
-                                    küsimus = input("Kas soovid osta muna? => ").lower()
-                                    if "muna" in küsimus:
-                                        muna = random.randint(1,2)
-                                        print(f"Muna hind on {muna} eurot")
-                            except:
-                                   print("On viga andmetega")
-                            kogus = input("Kui palju soovid osta? => ")
-                            if kogus.isdigit():
-                                kogus = int(kogus)
-                                summa = 0
-                                if "piima" in küsimus:
-                                    summa += piim * kogus
-                                elif "sai" in küsimus:
-                                    summa += sai * kogus
-                                elif "leiba" in küsimus:
-                                    summa += leib * kogus
-                                if "muna" in küsimus:
-                                    summa += muna * kogus
-                                print(f"Kokku maksad {summa} eurot")
-                                
+    piim = random.randint(1,5)
+    sai = random.randint(1,5)
+    leib = random.randint(1,5)
+    print(f"Piim maksab {piim} eurot")
+    print(f"Sai maksab {sai} eurot")
+    print(f"Leib maksab {leib} eurot")
+    summa = 0
+    summa_piim = 0
+    summa_sai = 0
+    summa_leib = 0
+    user = input("Kas soovid osta piima? (jah/ei) => ").lower()
+    if user.isalpha() and user == "jah":
+        kogus = int(input("Mitu tükki soovid osta? => "))
+        if kogus > 0:
+            summa_piim += piim * kogus
+            print(f"Kokku maksad piim {summa_piim} eurot")
+        else:
+            print("Palun sisesta positiivne arv")
+
+    user = input("Kas soovid osta saia? (jah/ei) => ").lower()
+    if user.isalpha() and user == "jah":
+        kogus = int(input("Mitu tükki soovid osta? => "))
+        if kogus > 0:
+            summa_sai += sai * kogus
+            print(f"Kokku maksad sai {summa_sai} eurot")
+        else:
+            print("Palun sisesta positiivne arv")
+    
+    user = input("Kas soovid osta leiba? (jah/ei) => ").lower()
+    if user.isalpha() and user == "jah":
+        kogus = int(input("Mitu tükki soovid osta? => "))
+        if kogus > 0:
+            summa_leib += leib * kogus
+            print(f"Kokku maksad leib {summa_leib} eurot")
+        else:
+            print("Palun sisesta positiivne arv")
+    summa = summa_piim + summa_sai + summa_leib
+    print(f"Kokku maksad kõik {summa} eurot")
+            
 except:
-    print("On viga andmetega")
+    print("KIRJUTA AINULT ARV")'''
+    
+#9 Ruut
+
+#Kasutaja sisestab ruudu küljed ning programm tuvastab kas tegemist saab olla ruuduga.
+#Koosta vastab plokkskeem ja salvesta see samasse kataloogi programmiga.
+
+'''pikkus = input("Sisesta ruudu külje pikkus => ")
+laius = input("Sisesta ruudu külje laius => ")
+try:
+    pikkus = int(pikkus)
+    laius = int(laius)
+    if pikkus > 0 and laius > 0:
+        if pikkus == laius:
+            print("See on ruut")
+        else:
+            print("See ei ole ruut")
+    else:
+        print("Palun sisesta positiivne arv")
+except:
+    print("KIRJUTA AINULT ARV")'''
+    
+#10 Matemaatika
+#Kasutaja sisestab kaks arvu ning programm küsib kasutajalt, mis tehet ta soovib (+-*/) ning viib kasutaja valiku ellu.
+#Koosta vastab plokkskeem ja salvesta see samasse kataloogi programmiga.
+
+'''try:
+    arv1 = float(input("Sisesta esimene arv => "))
+    arv2 = float(input("Sisesta teine arv => "))
+    tehe = input("Sisesta tehe (+-*/) => ")
+    if tehe == "+":
+        print(f"{arv1} + {arv2} = {arv1 + arv2}")
+    elif tehe == "-":
+        print(f"{arv1} - {arv2} = {arv1 - arv2}")
+    elif tehe == "*":
+        print(f"{arv1} * {arv2} = {arv1 * arv2:.2f}")
+    elif tehe == "/":
+        if arv2 != 0:
+            print(f"{arv1} / {arv2} = {arv1 / arv2:.2f}")
+        else:
+            print("Nulliga ei saa jagada")
+except:
+    print("Palun sisesta ainult + - * või /")'''
+
+#11 Juubel
+#Kasutaja sisestab oma sünnipäeva ja sinu programm ütleb, kas tegemist on juubeliga.
+#Plokkskeemi pole vaja!
+
+'''user = input("Sisesta oma sünnipäev (näiteks:11.12) => ").lower()
+if user == "25.11":
+    print("Palju õnne, sul on juubel!")
+else:
+    print("Täna ei ole su juubel!")'''
+    
+#12 Müük
+#Kasutaja sisestab toote hinna. Kui see on hinnaga kuni 10€, saab ta allahindlust 10%. Üle 10€ tooted saavad soodukat 20%.
+#Kuva toote lõplik hind. Plokkskeemi pole vaja!  
+
+'''hind = input("Sisesta toote hind => ")
+try:
+    hind = float(hind)
+    if hind > 0:
+        if hind <= 10:
+            hind *= 0.9
+            print("sinu tegevus on 10%")
+            print(f"Toote hind on {hind:.2f} eurot")
+        else:
+            hind *= 0.8
+            print("sinu tegevus on 20%")
+            print(f"Toote hind on {hind:.2f} eurot")
+    else:
+        print("Hind ei saa olla negatiivne")
+except:
+    print("KIRJUTA AINULT ARV")'''
+    
+#13 Jalgpalli meeskond
+#Sa pead looma programmi, mis kontrollib kas kandideerija sobib antud meeskonda.
+#Vanus peab jääma vahemikku 16-18 ning lubatud on ainult meessugu.
+#Täienda programmi nii, et kui kandideerija on naissoost, siis vanust üldse ei küsita
+
+'''sugu = input("Sisesta oma sugu (mees või naine) => ").lower()
+if sugu.isalpha():
+    if sugu == "mees":
+        vanus = input("Sisesta oma vanus => ")
+        if vanus.isdigit():
+            vanus = int(vanus)
+            if 16 <= vanus <= 18:
+                print("Sobid meeskonda")
+            else:
+                print("Ei sobi meeskonda")
+        else:
+            print("Palun sisesta täisarv vanuse kohta")
+    elif sugu == "naine":
+        print("Kahjuks naised ei saa meeskonda kandideerida")
+    else:
+        print("Palun sisesta mees või naine")'''
+        
+#14
+#Busside logistika
+
+#Olgu meil vaja transportida teatud arv inimesi bussidega, milles on teatud arv kohti. Mitu bussi on vaja selleks, et kõik inimesed kohale saaksid, ja mitu inimest on viimases bussis (eeldusel, et eelmised on kõik täiesti täis)? Kirjuta programm, mis küsib inimeste arvu ja busside suuruse ning lahendab seejärel selle ülesande.
+
+    
+'''try:
+    inimesed = int(input("Sisesta inimeste arv => "))
+    buss = int(input("Sisesta busside suurus => "))
+    if inimesed > 0 and buss > 0:
+        busside_arv = inimesed / buss
+        busside_arv = int(busside_arv)
+        viimases_bussis = inimesed % buss
+        if viimases_bussis == 0:
+            viimases_bussis = buss
+        print(f"Vaja on {busside_arv} bussi")
+        print(f"Viimases bussis on {viimases_bussis} inimest")
+    else:
+        print("Palun sisesta positiivne arv")
+except:
+    print("KIRJUTA AINULT ARV")'''
+    
