@@ -21,16 +21,56 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="AnalüsaatorMain.py" />
+    <Compile Include="analüsaatorModule.py" />
+    <Compile Include="gmail.py" />
     <Compile Include="IKTpv25_1_Yaroslav_Baka.py" />
     <Compile Include="IKTpv25_1YaroslavBaka2.py" />
     <Compile Include="Kontrolltöö Kordused.py" />
+    <Compile Include="Kysimutlik.py" />
+    <Compile Include="Kysimutlik_Module.py" />
     <Compile Include="listid.py" />
     <Compile Include="kivi paber-käärid.py" />
+    <Compile Include="main5_2.py" />
     <Compile Include="modulifail.py" />
+    <Compile Include="MyModule5_2.py" />
     <Compile Include="Tavalinefail.py" />
+    <Compile Include="Teema2.Valikud.py" />
+    <Compile Include="teema_7.py" />
     <Compile Include="töö4,1.py" />
+    <Compile Include="töö4.2 kivi paber-käärid.py" />
+    <Compile Include="Töö_3,1.py" />
     <Compile Include="Valikud2_1.py" />
     <Compile Include="Valikud2_3.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="materials\" />
+    <Folder Include="__pycache__\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".gitattributes" />
+    <Content Include=".gitignore" />
+    <Content Include="kysimused_vastused.txt" />
+    <Content Include="kõik.txt" />
+    <Content Include="materials\bool_Pythonis.txt" />
+    <Content Include="materials\e-kiri_Pythonis.txt" />
+    <Content Include="materials\finktioonid_Pythonis.txt" />
+    <Content Include="materials\float_Pythonis.txt" />
+    <Content Include="materials\If_Pythonis.txt" />
+    <Content Include="materials\int_Pythonis.txt" />
+    <Content Include="materials\JSON.txt" />
+    <Content Include="materials\list.txt" />
+    <Content Include="materials\Põhioperatsioonid Pythonis.txt" />
+    <Content Include="materials\sonatlik.txt" />
+    <Content Include="materials\str_Pythonis.txt" />
+    <Content Include="materials\Töö_Tekstifailidega.txt" />
+    <Content Include="materials\while_for.txt" />
+    <Content Include="message.html" />
+    <Content Include="oiged.txt" />
+    <Content Include="Python-logo-notext.svg.png" />
+    <Content Include="statistika.txt" />
+    <Content Include="valed.txt" />
+    <Content Include="__pycache__\modulifail.cpython-313.pyc" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
