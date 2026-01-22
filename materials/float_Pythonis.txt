@@ -1,0 +1,217 @@
+﻿🌊 Что такое float в Python?
+float (от floating point number, по-эстонски ujukomaarv) — это число с дробной частью, то есть число с десятичной точкой.
+
+Этот тип используется для хранения и вычисления вещественных чисел: дробей, результатов измерений и т.п.
+
+🧮 Примеры чисел с плавающей точкой
+
+a = 3.14
+b = -0.5
+c = 2.0
+
+print(a, b, c)  # 3.14 -0.5 2.0
+
+
+Все эти значения имеют тип float.
+
+🧠 Как создаётся float
+
+1️⃣ Просто указанием числа
+
+x = 5.6
+
+
+2️⃣ Преобразованием другого типа в float
+
+x = float(3)        # int → float → 3.0
+y = float("4.25")   # str → float → 4.25
+
+
+⚠️ Если строка не содержит корректного числа, возникнет ошибка:
+
+float("abc")  # ValueError!
+
+
+🧾 Разница между int и float
+
+int    5     — целое число, без дробной части
+float  5.0   — то же число, но с дробной частью
+
+
+💡 Хотя 5 и 5.0 выглядят похоже, это разные типы данных:
+
+print(type(5))    # <class 'int'>
+print(type(5.0))  # <class 'float'>
+
+
+⚙️ Основные операции с float
+
+Сложение        2.5 + 1.3   → 3.8
+Вычитание       4.1 - 0.6   → 3.5
+Умножение       3.2 * 2     → 6.4
+Деление         7 / 2       → 3.5
+Степень         2.5 ** 2    → 6.25
+Остаток (%)     5.5 % 2     → 1.5
+
+
+💡 Целочисленное деление (//) с float даёт результат типа float, если хотя бы один операнд — float:
+
+print(7.0 // 2)  # 3.0
+
+
+🔍 Проверка типа
+
+x = 2.7
+print(type(x))  # <class 'float'>
+
+
+🔢 Преобразования в float
+
+int  → float    float(5)      → 5.0
+str  → float    float("3.14") → 3.14
+bool → float    float(True)   → 1.0
+                 float(False) → 0.0
+
+
+🧮 Округление
+
+round(x)        — округляет до ближайшего целого
+round(3.6) → 4
+
+round(x, n)     — округляет до n знаков после запятой
+round(3.14159, 2) → 3.14
+
+pi = 3.1415926
+print(round(pi, 3))  # 3.142
+
+
+⚠️ Проблемы точности
+
+Из-за того, что числа с плавающей точкой хранятся в двоичной системе, возможны небольшие ошибки округления:
+
+print(0.1 + 0.2)  # 0.30000000000000004
+
+
+💡 Это нормально. При задачах, где важна точность (например, деньги), нужно быть осторожным.
+
+🧰 Полезные функции
+
+abs(x)        — абсолютное значение
+abs(-5.2) → 5.2
+
+pow(a, b)     — возведение в степень
+pow(2.0, 3) → 8.0
+
+max(...)      — наибольшее значение
+max(1.1, 5.6, 3.3) → 5.6
+
+min(...)      — наименьшее значение
+min(1.1, 5.6, 3.3) → 1.1
+
+
+🧩 Пример программы
+
+# Запросить число у пользователя и преобразовать в float
+price = float(input("Введите цену товара: "))
+quantity = float(input("Введите количество: "))
+
+total = price * quantity
+print("К оплате:", round(total, 2), "€")
+
+
+💬 Здесь float используется для вычислений, а round() — для округления до 2 знаков после запятой.
+
+✅ Итог
+
+float              — число с плавающей точкой (вещественное)
+Примеры            — 3.14, -0.5, 2.0
+Отличие от int     — наличие дробной части
+Преобразование     — float(x)
+Частые функции     — round, abs, max, min
+Проблемы точности  — возможны небольшие ошибки округления
+
+
+
+🌊 Mis on float Pythonis?
+float (ehk floating point number, eesti keeles ujukomaarv) on arv, millel on murdosa — st komakohtadega arv.
+Seda tüüpi kasutatakse reaalarvude (murdarvude, mõõtmistulemuste jms) salvestamiseks ja arvutamiseks.
+
+🧮 Näited ujukomaarvudest
+a = 3.14
+b = -0.5
+c = 2.0
+
+print(a, b, c)  # 3.14 -0.5 2.0
+Kõik need väärtused on float-tüüpi.
+
+🧠 Kuidas float luuakse
+1️⃣ Lihtsalt arvuga:
+x = 5.6
+2️⃣ Teisendades muu tüübi ujukomaarvuks:
+x = float(3)       # int → float → 3.0
+y = float("4.25")  # str → float → 4.25
+⚠️ Kui string ei sisalda korrektset arvu, tekib ValueError:
+
+float("abc")  # viga!
+🧾 Täisarvu ja ujukomaarvu erinevus
+Tüüp	Näide	Kirjeldus
+int	5	Täisarv, ilma komakohtadeta
+float	5.0	Sama arv, aga ujukomakohtadega
+💡 Kuigi 5 ja 5.0 näivad sarnased, on need erinevat tüüpi väärtused:
+
+print(type(5))    # <class 'int'>
+print(type(5.0))  # <class 'float'>
+⚙️ Põhitehted ujukomaarvudega
+Tehe	Sümbol	Näide	Tulemus
+Liitmine	+	2.5 + 1.3	3.8
+Lahutamine	-	4.1 - 0.6	3.5
+Korrutamine	*	3.2 * 2	6.4
+Jagamine	/	7 / 2	3.5
+Astendamine	**	2.5 ** 2	6.25
+Jagamisjääk	%	5.5 % 2	1.5
+💡 Täisarvude täisarvuline jagamine (//) annab ujukomaarvuga tulemuse, kui vähemalt üks operand on float:
+
+print(7.0 // 2)  # 3.0
+🔍 Tüübikontroll
+x = 2.7
+print(type(x))  # <class 'float'>
+🔢 Teisendused
+Tüüp	Teisendamine float’iks	Näide
+int → float	Lisab komakoha	float(5) → 5.0
+str → float	Kui string sisaldab numbrit	float("3.14") → 3.14
+bool → float	True → 1.0, False → 0.0	float(True) → 1.0
+🧮 Ümardamine
+Funktsioon	Kirjeldus	Näide
+round(x)	Ümardab lähima täisarvuni	round(3.6) → 4
+round(x, n)	Ümardab n komakohani	round(3.14159, 2) → 3.14
+pi = 3.1415926
+print(round(pi, 3))  # 3.142
+⚠️ Täpsusprobleemid
+Kuna ujukomaarvud salvestatakse kahendsüsteemis, võivad tekkida väikesed ümardusvead:
+
+print(0.1 + 0.2)  # 0.30000000000000004
+💡 See on normaalne ja tuleb arvestada, kui täpsus on oluline — näiteks rahaarvutustes.
+
+🧰 Kasulikud funktsioonid
+Funktsioon	Selgitus	Näide
+abs(x)	Arvu absoluutväärtus	abs(-5.2) → 5.2
+pow(a, b)	Astendamine	pow(2.0, 3) → 8.0
+max(a, b, c)	Suurim väärtus	max(1.1, 5.6, 3.3) → 5.6
+min(a, b, c)	Väikseim väärtus	min(1.1, 5.6, 3.3) → 1.1
+🧩 Näide programmist
+# Küsi kasutajalt arv ja teisenda float'iks
+hind = float(input("Sisesta toote hind: "))
+kogus = float(input("Sisesta kogus: "))
+
+kokku = hind * kogus
+print("Kokku maksta:", round(kokku, 2), "€")
+💬 Siin kasutatakse float arvutuste jaoks ja round() ümardamiseks 2 komakohani.
+
+✅ Kokkuvõte
+Mõiste	Kirjeldus
+float	Ujukomaarv ehk reaalarv
+Näited	3.14, -0.5, 2.0
+Erinevus int’iga	sisaldab komakohta
+Teisendus	float(x)
+Tüüpilised funktsioonid	round, abs, max, min
+Täpsusprobleemid	väikesed ümardusvead võimalikud

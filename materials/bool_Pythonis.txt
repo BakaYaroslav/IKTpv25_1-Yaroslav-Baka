@@ -1,0 +1,274 @@
+﻿⚙️ Что такое bool в Python?
+bool (от boolean) — это логический тип данных с двумя возможными значениями:
+
+True — истина
+
+False — ложь
+
+Используется в условных выражениях, сравнениях и логических операциях, чтобы определить, верно ли утверждение.
+
+🧠 Значения типа bool
+
+t = True
+f = False
+
+print(t, f)        # True False
+print(type(t))     # <class 'bool'>
+
+
+🔢 Bool как число
+В Python True и False ведут себя как целые числа:
+
+True  → 1
+False → 0
+
+print(True + True)  # 2
+print(False + 5)    # 5
+print(int(True))    # 1
+print(int(False))   # 0
+
+
+🔄 Преобразование в bool
+Любое значение можно превратить в bool с помощью bool():
+
+Значение               → bool(x)
+0, 0.0                 → False
+'' (пустая строка)     → False
+[], {}, () (пустые структуры) → False
+None                    → False
+Все остальное           → True
+
+
+Примеры:
+
+print(bool(5))       # True
+print(bool(0))       # False
+print(bool(""))      # False
+print(bool("Привет")) # True
+
+
+⚖️ Логические операции
+
+Операция   Символ   Пример             Результат
+И          and      True and False    False
+ИЛИ        or       True or False     True
+НЕ         not      not True          False
+
+
+Примеры:
+
+a = True
+b = False
+
+print(a and b)  # False
+print(a or b)   # True
+print(not a)    # False
+
+
+🔍 Сравнения
+Операторы сравнения всегда возвращают True или False:
+
+5 == 5   → True
+3 != 4   → True
+7 > 2    → True
+2 < 8    → True
+5 >= 5   → True
+3 <= 1   → False
+
+
+🧩 Bool в выражениях и условных конструкциях
+
+age = 18
+if age >= 18:
+    print("Вы совершеннолетний.")
+else:
+    print("Вы несовершеннолетний.")
+
+
+Выражение age >= 18 возвращает True или False, на основе чего выбирается ветка выполнения.
+
+🧮 Функции is...() для строк
+Python содержит много встроенных is...() функций, которые возвращают True или False. Полезны для проверки строк.
+
+Функция      Проверяет                      Пример                  Результат
+isalpha()    Все символы — буквы           'Привет'.isalpha()      True
+isdigit()    Все символы — цифры           '123'.isdigit()         True
+isalnum()    Только буквы и цифры          'Привет123'.isalnum()   True
+islower()    Все буквы — маленькие         'привет'.islower()      True
+isupper()    Все буквы — большие           'ПРИВЕТ'.isupper()      True
+istitle()    Каждое слово с заглавной      'Привет Мир'.istitle()  True
+isspace()    Строка состоит из пробелов    ' '.isspace()           True
+isdecimal()  Только десятичные символы     '45'.isdecimal()        True
+isnumeric()  Только числовые символы       'Ⅻ'.isnumeric()         True
+isascii()    Все символы входят в ASCII    'abc123'.isascii()      True
+
+
+🔬 Пример:
+
+text = "Python3"
+
+print(text.isalpha())  # False (содержит цифру)
+print(text.isalnum())  # True
+print(text.isupper())  # False
+print(text.istitle())  # True (P заглавная, остальные маленькие)
+
+
+🧠 Bool вместе с is...()
+
+s = input("Введите текст: ")
+
+if s.isdigit():
+    print("Это числовая строка.")
+elif s.isalpha():
+    print("Это буквенная строка.")
+else:
+    print("Смешанный или пустой тип строки.")
+
+
+✅ Итог
+
+bool               — логический тип данных (True или False)
+Истинность         — 0, "", [], {}, None → False; всё остальное → True
+Логические операторы — and, or, not
+Операторы сравнения — ==, !=, >, <, >=, <=
+Функции is...()    — проверка свойств строк
+Использование      — условные конструкции, проверки, решения в программе
+
+
+💬 Практический пример
+
+# Проверка пароля на соответствие требованиям
+
+password = input("Введите пароль: ")
+
+if password.isalnum() and not password.isdigit() and not password.isalpha():
+    print("Пароль подходит!")
+else:
+    print("Пароль должен содержать и буквы, и цифры.")
+
+
+
+
+
+⚙️ Mis on bool Pythonis?
+bool (ehk boolean) on loogiline andmetüüp, millel on kaks võimalikku väärtust:
+
+True — tõene
+
+False — väär
+
+Seda tüüpi kasutatakse tingimuslausetes, võrdlustes ja loogilistes avaldistes, et otsustada, kas mingi väide on õige või vale.
+
+🧠 Bool-tüübi väärtused
+t = True
+f = False
+
+print(t, f)          # True False
+print(type(t))       # <class 'bool'>
+🔢 Bool kui arv
+Pythonis käituvad True ja False nagu täisarvud:
+
+True vastab väärtusele 1
+
+False vastab väärtusele 0
+
+print(True + True)   # 2
+print(False + 5)     # 5
+print(int(True))     # 1
+print(int(False))    # 0
+🔄 Teisendused bool-tüübiks
+Väärtust saab muuta bool-iks funktsiooniga bool().
+
+Väärtus	Tõeväärtus (bool(x))
+0, 0.0	False
+'' (tühi string)	False
+[], {}, () (tühjad andmestruktuurid)	False
+None	False
+Kõik muu	True
+Näide:
+
+print(bool(5))     # True
+print(bool(0))     # False
+print(bool(""))    # False
+print(bool("Tere")) # True
+⚖️ Loogilised tehted
+Tehe	Sümbol	Näide	Tulemus
+JA	and	True and False	False
+VÕI	or	True or False	True
+MITTE	not	not True	False
+Näited:
+
+a = True
+b = False
+
+print(a and b)   # False
+print(a or b)    # True
+print(not a)     # False
+🔍 Bool ja võrdlused
+Võrdlusoperaatorid tagastavad alati True või False:
+
+Operatsioon	Näide	Tulemus
+==	5 == 5	True
+!=	3 != 4	True
+>	7 > 2	True
+<	2 < 8	True
+>=	5 >= 5	True
+<=	3 <= 1	False
+🧩 Bool avaldistes ja tingimuslausetes
+vanus = 18
+if vanus >= 18:
+    print("Oled täisealine.")
+else:
+    print("Oled alaealine.")
+👉 Võrdlus vanus >= 18 tagastab True või False ning selle põhjal otsustatakse, milline haru täidetakse.
+
+🧮 is...() kontrollfunktsioonid (stringide jaoks)
+Pythonis on palju sisseehitatud is...() funktsioone, mis tagastavad True või False.
+Need on eriti kasulikud stringide kontrollimisel.
+
+Funktsioon	Kontrollib, kas…	Näide	Tulemus
+isalpha()	kõik märgid on tähed	'Tere'.isalpha()	True
+isdigit()	kõik märgid on numbrid	'123'.isdigit()	True
+isalnum()	ainult tähed ja numbrid	'Tere123'.isalnum()	True
+islower()	kõik märgid on väiketähed	'tere'.islower()	True
+isupper()	kõik märgid on suurtähed	'TERE'.isupper()	True
+istitle()	iga sõna algab suure tähega	'Tere Maailm'.istitle()	True
+isspace()	string koosneb ainult tühikutest	' '.isspace()	True
+isdecimal()	koosneb ainult kümnendsümbolitest	'45'.isdecimal()	True
+isnumeric()	koosneb ainult numbrimärkidest (sh rooma numbrid, murdud)	'Ⅻ'.isnumeric()	True
+isascii()	kõik märgid kuuluvad ASCII-sse	'abc123'.isascii()	True
+🔬 Näide:
+tekst = "Python3"
+
+print(tekst.isalpha())   # False (sisaldab numbrit)
+print(tekst.isalnum())   # True
+print(tekst.isupper())   # False
+print(tekst.istitle())   # True (P suur, ülejäänud väikesed)
+🧠 Bool kombineeritult is...() funktsioonidega
+is...() funktsioonid on väga kasulikud koos tingimuslausetega:
+
+s = input("Sisesta tekst: ")
+
+if s.isdigit():
+    print("See on arvuline string.")
+elif s.isalpha():
+    print("See on sõnaline string.")
+else:
+    print("See on segatüüpi või tühi string.")
+✅ Kokkuvõte
+Mõiste	Kirjeldus
+bool	Loogiline andmetüüp (True või False)
+Tõeväärtus	0, "", [], {} ja None → False; muu → True
+Loogikaoperaatorid	and, or, not
+Võrdlusoperaatorid	==, !=, >, <, >=, <=
+is...() funktsioonid	Kontrollivad stringide omadusi
+Kasutus	Tingimuslaused, kontrollid, otsused programmis
+💬 Praktiline näide
+# Kontrolli, kas sisestatud parool vastab nõuetele
+
+parool = input("Sisesta parool: ")
+
+if parool.isalnum() and not parool.isdigit() and not parool.isalpha():
+    print("Parool sobib!")
+else:
+    print("Parool peab sisaldama nii tähti kui numbreid.")

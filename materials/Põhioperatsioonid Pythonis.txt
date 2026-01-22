@@ -1,0 +1,218 @@
+﻿🧮 Основные операции в Python
+
+🔹 Что такое выражение?
+Выражение — это вычисление или операция, которая возвращает результат.
+Выражение может состоять из чисел, переменных, операций и функций.
+
+Пример:
+
+x = 5 + 3 * 2
+print(x)  # 11
+
+
+⚙️ Основные арифметические операции
+
+Операция	Символ	Пример	Результат
+Возведение в степень	**	2 ** 3	8
+Умножение	*	4 * 5	20
+Деление	/	7 / 2	3.5
+Целочисленное деление	//	7 // 2	3
+Остаток от деления	%	7 % 2	1
+Сложение	+	10 + 3	13
+Вычитание	-	9 - 4	5
+
+🧩 Операции со строками
+
+Со строками (string) также можно выполнять некоторые операции:
+
+Операция	Описание	Пример	Результат
+
+| объединение строк | "Привет " + "мир" | "Привет мир"
+
+| повторение строки | "ха" * 3 | "хахаха"
+
+⚖️ Операции сравнения
+
+Эти операции возвращают логическое значение True или False.
+
+Операция	Символ	Пример	Результат
+Равно	==	5 == 5	True
+Не равно	!=	4 != 2	True
+Меньше	<	3 < 5	True
+Больше	>	7 > 2	True
+Меньше или равно	<=	5 <= 5	True
+Больше или равно	>=	6 >= 8	False
+
+🧠 Логические операции
+
+Логические значения (True / False) можно объединять логическими операторами:
+
+Операция	Описание	Пример	Результат
+not	отрицание (меняет на противоположное)	not True	False
+and	истина, если оба истинны	True and False	False
+or	истина, если хотя бы один истинен	False or True	True
+
+🧮 Таблица истинности
+
+p   q   not p   not q   p and q   p or q
+T   T     F       F        T        T
+F   T     T       F        F        T
+T   F     F       T        F        T
+F   F     T       T        F        F
+
+
+(T = истина / F = ложь)
+
+🔤 Специальные символы (escape-последовательности)
+
+Символ	Описание	Пример	Результат
+\n	переход на новую строку	"Привет\nМир"	
+		Привет	
+		Мир	
+\t	табуляция (отступ)	"Привет\tМир"	Привет Мир
+
+🧱 Проверка типов и преобразование
+
+Функция	Описание	Пример	Результат
+type(x)	показывает тип переменной	type(5)	<class 'int'>
+int(x)	преобразует в целое число	int(3.7)	3
+float(x)	преобразует в число с плавающей точкой	float("4.5")	4.5
+str(x)	преобразует в строку	str(123)	"123"
+
+🖥️ Ввод и вывод данных
+
+📥 Ввод (input())
+Для получения данных от пользователя используется функция input():
+
+name = input("Введите своё имя: ")
+
+
+📤 Вывод (print())
+Для вывода данных на экран используется print():
+
+print("Привет, мир!")
+print("Привет " + name + "!")
+
+
+💡 Текст нужно писать в кавычках, чтобы Python понимал, что это строка, а не команда.
+
+🧩 Пример программы
+
+name = input("Введите своё имя и нажмите ENTER: ")
+print("Привет " + name + "!")
+
+
+Пояснение:
+
+input() считывает введённый пользователем текст
+
+значение сохраняется в переменной name
+
+print() выводит результат на экран
+
+✅ Итог
+
+Раздел	Основные символы / функции
+Арифметика	+, -, *, /, //, %, **
+Работа со строками	+, *
+Сравнение	==, !=, <, >, <=, >=
+Логика	not, and, or
+Спецсимволы	\n, \t
+Преобразование типов	int(), float(), str(), type()
+Ввод и вывод	input(), print()
+
+
+
+🧮 Põhioperatsioonid Pythonis
+🔹 Mis on avaldis?
+Avaldis on arvutus või tehe, mis annab tulemuse.
+Avaldis võib koosneda arvudest, muutujatest, tehetest ja funktsioonidest.
+
+Näide:
+
+x = 5 + 3 * 2
+print(x)  # 11
+⚙️ Aritmeetilised põhioperatsioonid
+Operatsioon	Sümbol	Näide	Tulemus
+Astendamine	**	2 ** 3	8
+Korrutamine	*	4 * 5	20
+Jagamine	/	7 / 2	3.5
+Jagamise täisarvuline osa	//	7 // 2	3
+Jagamisjääk	%	7 % 2	1
+Liitmine	+	10 + 3	13
+Lahutamine	-	9 - 4	5
+🧩 Tehted tekstidega
+Tekste (ehk stringe) saab samuti teatud tehetega töödelda:
+
+Tehe	Kirjeldus	Näide	Tulemus
++	tekstide liitmine	"Tere " + "maailm"	"Tere maailm"
+*	teksti kordamine	"ha" * 3	"hahaha"
+⚖️ Võrdlusoperatsioonid
+Need tehed annavad tulemuseks tõeväärtuse (True või False).
+
+Operatsioon	Sümbol	Näide	Tulemus
+Võrdne	==	5 == 5	True
+Ei võrdu	!=	4 != 2	True
+Väiksem	<	3 < 5	True
+Suurem	>	7 > 2	True
+Väiksem või võrdne	<=	5 <= 5	True
+Suurem või võrdne	>=	6 >= 8	False
+🧠 Loogilised operatsioonid
+Loogilisi väärtusi (True/False) saab ühendada loogikaoperaatoritega:
+
+Operatsioon	Kirjeldus	Näide	Tulemus
+not	eitab (muudab vastupidiseks)	not True	False
+and	tõene, kui mõlemad on tõesed	True and False	False
+or	tõene, kui vähemalt üks on tõene	False or True	True
+🧮 Tõeväärtuste tabel
+p	q	not p	not q	p and q	p or q
+T	T	V	V	T	T
+V	T	T	V	V	T
+T	V	V	T	V	T
+V	V	T	T	V	V
+(T = tõene / V = väär)
+
+🔤 Erisümbolid (escape-sequences)
+Sümbol	Kirjeldus	Näide	Tulemus
+\n	reavahetus	"Tere\nMaailm"	
+Tere			
+Maailm			
+\t	tabulatsioon (taande lisamine)	"Tere\tMaailm"	Tere Maailm
+🧱 Tüüpide kontroll ja teisendamine
+Funktsioon	Kirjeldus	Näide	Tulemus
+type(x)	näitab muutuja tüüpi	type(5)	<class 'int'>
+int(x)	teisendab täisarvuks	int(3.7) → 3	
+float(x)	teisendab ujukomaarvuks	float("4.5") → 4.5	
+str(x)	teisendab tekstiks	str(123) → "123"	
+🖥️ Sisend ja väljund
+📥 Sisend (input())
+Kasutajalt andmete küsimiseks kasutatakse funktsiooni input():
+
+nimi = input("Palun sisesta oma nimi: ")
+📤 Väljund (print())
+Andmete kuvamiseks kasutatakse print() käsku:
+
+print("Tere maailm!")
+print("Tere " + nimi + "!")
+💡 Tekst tuleb kirjutada jutumärkide vahele, et Python teaks, et see on sõne, mitte käsk.
+
+🧩 Näide programm
+nimi = input("Palun sisesta oma nimi ja vajuta ENTER: ")
+print("Tere " + nimi + "!")
+Selgitus:
+
+input() loeb kasutaja sisendi (tekstina),
+
+väärtus salvestatakse muutujasse nimi,
+
+print() kuvab tulemuse ekraanile.
+
+✅ Kokkuvõte
+Teemagrupp	Olulisemad sümbolid / funktsioonid
+Aritmeetika	+, -, *, /, //, %, **
+Tekstide töötlus	+, *
+Võrdlus	==, !=, <, >, <=, >=
+Loogika	not, and, or
+Erisümbolid	\n, \t
+Tüüpide teisendus	int(), float(), str(), type()
+Sisend ja väljund	input(), print()

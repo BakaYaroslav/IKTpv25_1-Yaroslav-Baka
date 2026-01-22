@@ -1,0 +1,145 @@
+﻿📧 Отправка e-mail с помощью Python
+Шаг 1: Импортируем модули
+
+Для работы с e-mail в Python понадобятся встроенные модули smtplib и email.message.
+
+import smtplib
+from email.message import EmailMessage
+
+Шаг 2: Настройка заголовков письма
+
+Создаём объект EmailMessage(), в котором будут все детали письма (тема, отправитель, получатель).
+
+# создаём объект письма
+message = EmailMessage()
+
+# данные письма
+email_subject = "Тестовое письмо из Python"
+sender_email_address = "your_email@gmail.com"
+receiver_email_address = "receiver_email@address.com"
+
+# настраиваем заголовки
+message['Subject'] = email_subject
+message['From'] = sender_email_address
+message['To'] = receiver_email_address
+
+Шаг 3: Настройка тела письма
+
+Простейший пример — текстовое сообщение:
+
+# устанавливаем текст письма
+message.set_content("Привет из Python!")
+
+Шаг 4: Настройка SMTP сервера
+
+SMTP — это протокол для отправки e-mail. Для Gmail:
+
+email_smtp = "smtp.gmail.com"
+
+# создаём объект сервера
+server = smtplib.SMTP(email_smtp, 587)
+
+# идентифицируемся на сервере
+server.ehlo()
+
+# шифруем соединение через TLS
+server.starttls()
+
+
+Примечание: порт 587 используется для SMTP с TLS.
+
+Шаг 5: Отправка письма
+
+Сначала нужно войти в почтовый аккаунт с помощью метода login(). Для Gmail используйте App Password
+, а не обычный пароль.
+
+email_password = "your_email_password"
+
+# вход в аккаунт
+server.login(sender_email_address, email_password)
+
+# отправка письма
+server.send_message(message)
+
+# закрытие соединения
+server.quit()
+
+Шаг 6: Полный пример
+import smtplib
+from email.message import EmailMessage
+
+email_subject = "Тестовое письмо из Python"
+sender_email_address = "your_email@gmail.com"
+receiver_email_address = "receiver_email@address.com"
+email_smtp = "smtp.gmail.com"
+email_password = "your_email_password"
+
+# создаём письмо
+message = EmailMessage()
+message['Subject'] = email_subject
+message['From'] = sender_email_address
+message['To'] = receiver_email_address
+message.set_content("Привет из Python!")
+
+# подключаемся к SMTP серверу
+server = smtplib.SMTP(email_smtp, 587)
+server.ehlo()
+server.starttls()
+server.login(sender_email_address, email_password)
+
+# отправка письма
+server.send_message(message)
+server.quit()
+
+Отправка HTML письма
+
+Если нужно отправить HTML:
+
+Создаём файл message.html с содержимым HTML:
+
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+  <h1>Письмо из Python</h1>
+  <p>Привет!</p>
+  <a href="https://inspirezone.tech/">Ссылка на крутое сообщество разработчиков</a>
+</body>
+</html>
+
+
+В Python читаем файл и отправляем как HTML:
+
+message = EmailMessage()
+
+# читаем HTML файл
+with open('message.html', 'r') as file:
+    file_content = file.read()
+
+# добавляем HTML контент
+message.set_content(file_content, subtype='html')
+
+Отправка изображения в письме
+
+Открываем изображение и читаем его в бинарном формате:
+
+with open('image.jpg', 'rb') as file:
+    image_data = file.read()
+
+
+Используем add_attachment() для добавления изображения:
+
+import imghdr
+from email.message import EmailMessage
+
+message = EmailMessage()
+message.set_content("Письмо из Python с изображением")
+
+# прикрепляем изображение
+message.add_attachment(
+    image_data,
+    maintype='image',
+    subtype=imghdr.what(None, image_data)
+)
+
+

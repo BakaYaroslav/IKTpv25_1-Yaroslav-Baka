@@ -1,0 +1,336 @@
+﻿🌐 JSON (JavaScript Object Notation) в Python
+1. Что такое JSON?
+
+JSON — это лёгкий формат данных, который широко используется для:
+
+Хранения данных в файлах.
+
+Обмена данными между программами (например, через веб-сервисы или API).
+
+🤝 JSON и Python
+
+JSON напрямую связан с Python, так как его структура соответствует типам Python:
+
+Python тип	Соответствие в JSON	Пример
+dict (словарь)	JSON-объект	{"имя": "Анна"}
+list (список)	JSON-массив	["Мария", "Юрий"]
+True / False	true / false	Логические значения
+None	null	Отсутствие значения
+2. Работа с JSON в Python
+
+Для работы с JSON используется стандартный модуль json.
+
+2.1. Импорт
+import json
+import requests  # для запросов к API
+
+2.2. Python объект ↔ JSON строка
+
+json.dumps() — конвертирует Python объект в JSON-строку.
+
+json.loads() — конвертирует JSON-строку обратно в Python объект.
+
+import json
+
+data = {"имя": "Анна", "возраст": 25, "замужем": False}
+
+# Python -> JSON строка
+json_string = json.dumps(data)
+
+# JSON строка -> Python объект
+data_back = json.loads(json_string)
+
+
+Красивое форматирование JSON:
+
+print(json.dumps(data, indent=2, sort_keys=True))
+
+
+indent=2 — отступ для читаемости.
+
+sort_keys=True — сортировка ключей по алфавиту.
+
+2.3. Работа с JSON-файлами
+
+json.dump() — записывает Python объект в файл в формате JSON.
+
+json.load() — читает JSON из файла и преобразует в Python объект.
+
+klass = { 
+    "учитель": "Тамм", 
+    "ученики": [{"имя": "Мария", "оценка": 5}, {"имя": "Юрий", "оценка": 4}] 
+}
+
+with open("klass.json", "w") as f: 
+    json.dump(klass, f, indent=2)
+
+
+JSON поддерживает вложенные структуры, аналогичные сложным словарям и спискам в Python.
+
+3. 🌤 Пример: использование API прогноза погоды
+
+JSON незаменим при работе с API, например, для получения прогноза погоды с OpenWeatherMap.
+
+Цель проекта: запросить город, сделать API-запрос и вывести погоду.
+
+import requests
+
+api_key = "ВАШ_API_KEY"  # замените на свой ключ
+city = input("Введите название города: ")
+url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric&lang=ru"
+
+response = requests.get(url)
+data = response.json()  # конвертируем JSON в Python словарь
+
+if data.get("cod") != "404":
+    main = data["main"]
+    temperature = main["temp"]
+    description = data["weather"][0]["description"]
+    wind_speed = data["wind"]["speed"]
+
+    print(f"Температура: {temperature}°C")
+    print(f"Описание: {description.capitalize()}")
+    print(f"Скорость ветра: {wind_speed} м/с")
+else:
+    print("Город не найден. Проверьте правильность названия.")
+
+
+Опционально: сохранить JSON в файл для дальнейшего анализа.
+
+🎯 Итог
+
+JSON в Python очень полезен для:
+
+Хранения постоянных данных.
+
+Обмена информацией между программами (API).
+
+Создания профессиональных и структурированных проектов.
+
+
+
+
+
+
+
+
+🌐 JSON (JavaScript Object Notation) Pythonis
+1. Mis on JSON?
+JSON (JavaScript Object Notation) on lihtne ja kerge andmevorming, mida kasutatakse laialdaselt.
+
+Andmete salvestamiseks failides.
+
+Andmete vahetamiseks programmide (näiteks veebiteenuste ehk API-de) vahel.
+
+🤝 JSON-i ja Pythoni Sarnasused
+JSON on Pythoniga loomulikult seotud, kuna selle struktuur peegeldab otseselt Pythoni andmetüüpe:
+
+Pythoni tüüp	JSON-i vaste	Näide
+dict (sõnastik)	JSON-objekt	{"nimi": "Anna"}
+list (järjend)	JSON-massiiv	["Mari", "Jüri"]
+True/False	true/false	Loogikaväärtused
+None	null	Väärtuse puudumine
+2. JSON-i Kasutamine Pythonis
+JSON-andmete lugemiseks ja kirjutamiseks kasutatakse standardmoodulit json.
+
+2.1. Importimine ja Seadistamine
+import json
+import requests # Vajalik API-päringute tegemiseks
+2.2. Python andmestik ↔️ JSON string
+Kahte peamist meetodit kasutatakse andmete konverteerimiseks:
+
+Meetod	Eesmärk	Näide
+.dumps()	Dump string – konverteerib Pythoni objekti JSON-stringiks.	json_string = json.dumps(andmed)
+.loads()	Load string – konverteerib JSON-stringi tagasi Pythoni objektiks (sõnastikuks/listiks).	andmed = json.loads(json_string)
+Ilusam Formaat: Saab luua loetavama (indentitud) JSON-stringi.
+
+andmed = {"nimi": "Anna", "vanus": 25, "abielus": False} 
+print(json.dumps(andmed, indent=2, sort_keys=True))
+# indent=2 määrab taanderea suuruse.
+2.3. Töö JSON-failidega
+Failidega tööks kasutatakse meetodeid, mis võtavad lisaks andmetele ka failiobjekti (mille saab lahti with open abil):
+
+Meetod	Eesmärk	Kasutamine
+.dump()	Kirjutab Pythoni objekti (nt. sõnastiku) otse JSON-faili.	json.dump(andmed, f)
+.load()	Loeb andmed otse JSON-failist ja teisendab need Pythoni objektiks.	andmed_failist = json.load(f)
+Keerulisemad Andmestruktuurid: JSON toetab sisesõnastikke ja sisesisese (nested) struktuuri, mis vastab keerukatele Pythoni sõnastikele/listidele.
+
+klass = { 
+    "opetaja": "Tamm", 
+    "opilased": [{"nimi": "Mari", "hinne": 5}, {"nimi": "Jüri", "hinne": 4}] 
+} 
+with open("klass.json", "w") as f: 
+    json.dump(klass, f, indent=2)
+3. 🌤️ Näide: Ilmateate API Kasutamine
+JSON on asendamatu, kui luuakse programme, mis suhtlevad avalike teenustega (API-dega), nagu ilmateate saamine OpenWeatherMapist.
+
+Projekti Eesmärk: Ehitada programm, mis küsib linna nime, teeb API-päringu ja kuvab JSON-vastusest ilmainfo.
+
+Sammud
+API Võtme Hankimine: Registreeri API võti (nt. OpenWeatherMap).
+
+Päringu Koostamine ja Teostamine: Kasutatakse requests moodulit päringu tegemiseks.
+
+Vastuse Töötlus: API vastus teisendatakse vastus.json() abil Pythoni sõnastikuks.
+
+api_voti = "SINU_API_VÕTI" # asenda oma API võtmega
+linn = input("Sisesta linna nimi: ")
+url = f"http://api.openweathermap.org/data/2.5/weather?q={linn}&appid={api_voti}&units=metric&lang=et"
+
+vastus = requests.get(url)
+andmed = vastus.json() # Konverteeri JSON vastus Pythoni sõnastikuks
+
+if andmed.get("cod") != "404": 
+    peamine = andmed["main"] 
+    temperatuur = peamine["temp"]
+    kirjeldus = andmed["weather"][0]["description"] 
+    tuul = andmed["wind"]["speed"]
+
+    # ... Väljastatakse andmed
+    print(f"Temperatuur: {temperatuur}°C") 
+    print(f"Kirjeldus: {kirjeldus.capitalize()}")
+else:
+    print("Linna ei leitud. Palun kontrolli nime õigekirja.")
+(Valikuline) Andmete Salvestamine: JSON-andmete salvestamiseks faili, et neid hiljem analüüsida.
+
+🎯 Kokkuvõte
+JSON on Pythonis väga kasulik:
+
+Salvestada püsivaid andmeid.
+
+Vahetada infot programmide vahel (nt. API-dega suheldes).
+
+Teha oma projektid professionaalsemaks ja korrastatumaks.
+
+
+
+
+
+
+JSON в Python
+1. Что такое JSON?
+
+JSON (JavaScript Object Notation) — это простой формат данных, который используется для:
+
+Хранения данных в файлах.
+
+Обмена данными между программами.
+
+Соответствие Python ↔ JSON:
+
+Python	JSON
+dict	объект JSON
+list	массив JSON
+True / False	true / false
+None	null
+2. Работа с JSON в Python
+2.1. Импорт модуля
+import json
+
+2.2. Python объект → JSON строка
+andmed = {"nimi": "Anna", "vanus": 25, "abielus": False}
+json_string = json.dumps(andmed)
+print(json_string)
+
+2.3. Сохранение JSON в файл
+with open("andmed.json", "w") as f:
+    json.dump(andmed, f)
+
+2.4. Чтение JSON из файла
+with open("andmed.json", "r") as f:
+    andmed_failist = json.load(f)
+print(andmed_failist)
+
+2.5. Красивый вывод JSON
+print(json.dumps(andmed, indent=2, sort_keys=True))
+
+
+indent=2 — задаёт отступы для читаемости.
+
+sort_keys=True — сортирует ключи по алфавиту.
+
+3. Сложные структуры данных
+
+JSON поддерживает вложенные структуры, например словари и списки внутри друг друга:
+
+klass = {
+    "opetaja": "Tamm",
+    "opilased": [
+        {"nimi": "Mari", "hinne": 5},
+        {"nimi": "Jüri", "hinne": 4}
+    ]
+}
+
+with open("klass.json", "w") as f:
+    json.dump(klass, f, indent=2)
+
+🎯 Итог
+
+JSON в Python полезен для:
+
+Хранения постоянных данных.
+
+Обмена информацией между программами.
+
+Создания профессиональных и структурированных проектов.
+
+Пример: Погода в твоём городе
+
+Цель проекта:
+
+Создать программу, которая:
+
+Запрашивает у пользователя название города.
+
+Делает запрос к публичному API погоды.
+
+Получает ответ в формате JSON.
+
+Красиво выводит информацию о погоде на экран.
+
+Шаги
+
+Регистрация API ключа: OpenWeatherMap.
+
+Импортируем модули:
+
+import requests
+import json
+
+
+Запрашиваем город у пользователя:
+
+linn = input("Введите название города: ")
+
+
+Формируем API-запрос:
+
+api_voti = "ВАШ_API_KEY"  # замените на свой ключ
+url = f"http://api.openweathermap.org/data/2.5/weather?q={linn}&appid={api_voti}&units=metric&lang=ru"
+
+
+Выполняем запрос и обрабатываем ответ:
+
+vastus = requests.get(url)
+andmed = vastus.json()
+
+if andmed.get("cod") != "404":
+    peamine = andmed["main"]
+    temperatuur = peamine["temp"]
+    niiskus = peamine["humidity"]
+    kirjeldus = andmed["weather"][0]["description"]
+    tuul = andmed["wind"]["speed"]
+
+    print(f"\nПогода в городе {linn}:")
+    print(f"Температура: {temperatuur}°C")
+    print(f"Описание: {kirjeldus.capitalize()}")
+    print(f"Влажность: {niiskus}%")
+    print(f"Скорость ветра: {tuul} м/с")
+else:
+    print("Город не найден. Проверьте правильность названия.")
+
+
+(Опционально) Сохраняем данные в файл:
+
+with open("ilm.json", "w", encoding="utf-8") as f:
+    json.dump(andmed, f, ensure_ascii=False, indent=4)

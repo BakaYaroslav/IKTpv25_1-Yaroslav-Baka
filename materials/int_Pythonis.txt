@@ -1,0 +1,200 @@
+﻿🔢 Что такое int в Python?
+int (от integer, по-эстонски täisarv) — это тип данных для хранения и обработки целых чисел (как положительных, так и отрицательных).
+
+Это один из базовых типов данных в Python наряду с float, str и bool.
+
+🧮 Примеры целых чисел
+
+x = 5
+y = -12
+z = 0
+
+print(x, y, z)  # 5 -12 0
+
+
+Все эти значения имеют тип int.
+
+⚙️ Как создаётся int
+
+1️⃣ Непосредственно заданием значения
+
+number = 42
+
+
+2️⃣ Преобразованием другого типа в int
+
+number1 = int("123")   # преобразует строку в число → 123
+number2 = int(4.7)     # преобразует float в int → 4
+
+
+⚠️ Если строку нельзя преобразовать в число, возникнет ошибка:
+
+int("abc")  # ValueError!
+
+
+➕ Основные операции с целыми числами
+
+Сложение              5 + 3     → 8
+Вычитание             9 - 4     → 5
+Умножение             6 * 2     → 12
+Деление (float)       7 / 2     → 3.5
+Целочисленное деление 7 // 2    → 3
+Остаток (modulo)      7 % 2     → 1
+Возведение в степень  2 ** 3    → 8
+
+
+🧠 Свойства целых чисел
+
+Целые числа в Python могут быть сколь угодно большими (нет фиксированного максимального размера).
+
+Целые числа не содержат дробной части — для этого используется тип float.
+
+Используются в арифметике, условиях, циклах, индексах и т.д.
+
+🔍 Проверка типа
+Функция type() показывает тип значения:
+
+a = 10
+print(type(a))  # <class 'int'>
+
+
+🔄 Преобразования в int
+
+float → int   int(5.9)   → 5     (без округления)
+str → int     int("12")  → 12
+bool → int    int(True)  → 1
+               int(False) → 0
+
+
+🧩 Примеры
+
+a = 10
+b = 3
+
+print(a + b)   # 13
+print(a - b)   # 7
+print(a * b)   # 30
+print(a / b)   # 3.3333...
+print(a // b)  # 3
+print(a % b)   # 1
+print(a ** b)  # 1000
+
+
+🔢 Сравнение целых чисел
+
+5 == 5   → True
+5 != 4   → True
+5 > 3    → True
+2 < 8    → True
+5 >= 5   → True
+3 <= 2   → False
+
+
+🧠 Пример программы
+
+# Запросить у пользователя два целых числа и найти их сумму
+a = int(input("Введите первое целое число: "))
+b = int(input("Введите второе целое число: "))
+
+summa = a + b
+print("Сумма:", summa)
+
+
+💡 Функция input() всегда возвращает строку, поэтому перед вычислениями её нужно преобразовать в int.
+
+✅ Итог
+
+int              — целочисленный тип данных
+Примеры          — -5, 0, 42
+Основные операции — +, -, *, /, //, %, **
+Преобразование   — int(x) превращает значение в целое число
+Использование    — математика, счётчики, индексы, циклы и т.д.
+
+
+
+
+
+🔢 Mis on int Pythonis?
+int (ehk integer, eesti keeles täisarv) on andmetüüp, mida kasutatakse täisarvuliste väärtuste (nii positiivsete kui ka negatiivsete) salvestamiseks ja töötlemiseks.
+
+See on üks põhilisemaid andmetüüpe Pythonis, koos float, str ja bool tüüpidega.
+
+🧮 Näited täisarvudest
+x = 5
+y = -12
+z = 0
+
+print(x, y, z)  # 5 -12 0
+Kõik need on int-tüüpi väärtused.
+
+⚙️ Kuidas int luuakse
+1️⃣ Otseselt väärtusega:
+arv = 42
+2️⃣ Teisendades mõne muu tüübi int-iks:
+arv1 = int("123")     # teisendab stringi arvuks → 123
+arv2 = int(4.7)       # teisendab ujuvarvu täisarvuks → 4
+⚠️ Kui stringi ei saa arvuks teisendada, tekib viga:
+
+int("abc")  # ValueError!
+➕ Põhitehted täisarvudega
+Tehe	Sümbol	Näide	Tulemus
+Liitmine	+	5 + 3	8
+Lahutamine	-	9 - 4	5
+Korrutamine	*	6 * 2	12
+Jagamine (ujukomaarvuline)	/	7 / 2	3.5
+Jagamine (täisarvuline)	//	7 // 2	3
+Jääk (modulo)	%	7 % 2	1
+Astendamine	**	2 ** 3	8
+🧠 Täisarvude omadused
+Täisarvud võivad olla piiramatult suured (Pythonis pole fikseeritud täisarvude maksimaalset suurust).
+
+Täisarvud ei sisalda komakohti — selleks kasutatakse float-tüüpi.
+
+Saad neid kasutada kõigis aritmeetilistes avaldistes ja tingimuslausetes.
+
+🔍 Kontrolli tüüpi
+Funktsioon type() näitab, mis tüüpi väärtus muutujas on:
+
+a = 10
+print(type(a))  # <class 'int'>
+🔄 Teisendused
+Tüüp	Teisendamine int-iks	Näide
+float → int	loob uue täisarvu (ilma ümardamiseta)	int(5.9) → 5
+str → int	kui string sisaldab arvu	int("12") → 12
+bool → int	True → 1, False → 0	int(True) → 1
+🧩 Näiteid
+a = 10
+b = 3
+
+# Matemaatilised tehted
+print(a + b)   # 13
+print(a - b)   # 7
+print(a * b)   # 30
+print(a / b)   # 3.3333...
+print(a // b)  # 3
+print(a % b)   # 1
+print(a ** b)  # 1000
+🔢 Täisarvude võrdlemine
+Võrdlusoperaator	Näide	Tulemus
+==	5 == 5	True
+!=	5 != 4	True
+>	5 > 3	True
+<	2 < 8	True
+>=	5 >= 5	True
+<=	3 <= 2	False
+🧠 Näide programm
+# Küsi kasutajalt kaks täisarvu ja arvuta nende summa
+a = int(input("Sisesta esimene täisarv: "))
+b = int(input("Sisesta teine täisarv: "))
+
+summa = a + b
+print("Summa on:", summa)
+💡 Funktsioon input() loeb alati stringi, mistõttu tuleb see enne arvutamist teisendada int-iks.
+
+✅ Kokkuvõte
+Mõiste	Kirjeldus
+int	Täisarvuline andmetüüp
+Näited	-5, 0, 42
+Peamised tehted	+, -, *, /, //, %, **
+Teisendus	int(x) muudab väärtuse täisarvuks
+Kasutus	Matemaatika, loendused, indeksid, tsüklid jne

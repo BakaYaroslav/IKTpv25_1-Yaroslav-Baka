@@ -1,0 +1,157 @@
+﻿🐍 Условные конструкции if в Python
+Условный оператор (if) позволяет программе принимать решения — выполнять определённые действия только если условие истинно (True).
+
+🧩 Основные структуры
+
+1️⃣ Простой if
+
+if условие:
+    действие
+
+
+Если условие True, выполняется действие.
+
+Если условие False, программа продолжает работу без выполнения действия.
+
+Пример:
+
+x = 5
+if x > 0:
+    print("Положительное число")
+
+
+2️⃣ if…else
+
+if условие:
+    действие_1
+else:
+    действие_2
+
+
+Если условие True, выполняется действие_1.
+
+Иначе выполняется действие_2.
+
+Пример:
+
+x = int(input("Введите число: "))
+if x == 1:
+    print("Верно")
+else:
+    print("Неверно")
+
+
+3️⃣ if…elif…else
+
+if условие_1:
+    действие_1
+elif условие_2:
+    действие_2
+else:
+    действие_3
+
+
+Проверяются условия по порядку.
+
+При первом условии, которое истинно, выполняется соответствующее действие, остальные условия не проверяются.
+
+Пример:
+
+x = int(input("Введите число от -5 до 5: "))
+if x < -5:
+    print("Мало")
+elif -5 <= x <= 5:
+    print("ОК")
+else:
+    print("Много")
+
+
+🛠 Полезные встроенные функции
+
+Функция	Описание
+abs(x)	Возвращает абсолютное значение числа
+bool(x)	Преобразует значение в логическое (True/False)
+int(x)	Преобразует значение в целое число
+float(x)	Преобразует значение в число с плавающей точкой
+len(x)	Возвращает количество элементов объекта (например, длину строки)
+max(seq)	Наибольший элемент последовательности
+min(seq)	Наименьший элемент последовательности
+sum(seq)	Сумма элементов последовательности
+range(start, stop, step)	Последовательность чисел с заданным шагом
+print(obj)	Вывод на экран
+input(prompt)	Запрос ввода у пользователя
+
+💡 Совет:
+Используйте elif, чтобы избежать нескольких if, если условия исключают друг друга. Это делает код чистым и эффективным.
+
+Если хочешь, могу дальше перевести материал про циклы for и while в таком же удобном формате для .txt.
+
+
+
+
+
+
+🐍 If-konstruktsioonid Pythonis
+Tingimuslause (if-lause) võimaldab programmil teha otsuseid – täita teatud käske ainult siis, kui tingimus on tõene (True).
+
+🧩 Põhistruktuurid
+1️⃣ Lihtne if-lause
+if tingimus:
+    tegevus
+Kui tingimus on True, täidetakse tegevus.
+Kui tingimus on False, jätkatakse programmi ilma tegevust tegemata.
+
+Näide:
+
+x = 5
+if x > 0:
+    print("Positiivne arv")
+2️⃣ If…else
+if tingimus:
+    tegevus_1
+else:
+    tegevus_2
+Kui tingimus on True, täidetakse tegevus_1, vastasel juhul tegevus_2.
+
+Näide:
+
+x = int(input("Sisesta arv: "))
+if x == 1:
+    print("Õige")
+else:
+    print("Vale")
+3️⃣ If…elif…else
+if tingimus_1:
+    tegevus_1
+elif tingimus_2:
+    tegevus_2
+else:
+    tegevus_3
+Kontrollitakse järjest tingimusi.
+Kui üks neist on True, täidetakse vastav tegevus ja ülejäänuid enam ei kontrollita.
+
+Näide:
+
+x = int(input("Sisesta arv -5 kuni 5: "))
+if x < -5:
+    print("Vähe")
+elif -5 <= x <= 5:
+    print("OK")
+else:
+    print("Palju")
+Kasulikud sisseehitatud funktsioonid
+Funktsioon	Kirjeldus
+abs(x)	Tagastab arvu absoluutväärtuse
+bool(x)	Muudab väärtuse loogiliseks (True/False)
+int(x)	Muudab väärtuse täisarvuks
+float(x)	Muudab väärtuse ujukomaarvuks
+len(x)	Tagastab objektis olevate elementide arvu (nt sõne pikkus)
+max(seq)	Suurim element jadas
+min(seq)	Väikseim element jadas
+sum(seq)	Elementide summa
+range(start, stop, step)	Arvude jada kindla sammuga
+print(obj)	Kuvab ekraanile
+input(prompt)	Küsib kasutajalt sisendit
+💡 Nipp:
+Kasutades elif, väldi mitut if-i, kui tingimused välistavad üksteist — see muudab koodi selgemaks ja efektiivsemaks.
+

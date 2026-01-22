@@ -1,0 +1,180 @@
+﻿🧩 Списки (list) в Python
+
+Список — это структура данных, которая позволяет хранить несколько значений в одной переменной.
+Список упорядочен и изменяем (mutable) — можно добавлять, удалять или изменять элементы после создания списка.
+
+Основные свойства
+Свойство	Описание
+Упорядоченный	Каждый элемент имеет фиксированное место (индекс от 0).
+Изменяемый	Можно добавлять, удалять и изменять элементы.
+Может содержать разные типы	Например: числа, строки, другие списки и т.д.
+Индексируемый	Доступ к элементам по индексам.
+Создание списка
+# Пустой список
+s1 = []
+print(s1)  # []
+
+# Список с элементами
+s2 = ['l', 'i', 's', 't', 2]
+print(s2)  # ['l', 'i', 's', 't', 2]
+
+# С помощью функции list()
+s3 = list('list')
+print(s3)  # ['l', 'i', 's', 't']
+
+Элементы списка и индексы
+loend = [10, 20, 30, 40]
+print(loend[0])   # первый элемент → 10
+print(loend[-1])  # последний элемент → 40
+
+loend[1] = 25     # изменяем второй элемент
+print(loend)      # [10, 25, 30, 40]
+
+Основные методы списка
+Метод	Описание	Пример
+append(x)	Добавляет элемент в конец	loend.append(5)
+extend(L)	Добавляет все элементы другого списка	loend.extend([6,7])
+insert(i, x)	Вставляет элемент в указанное место	loend.insert(1, 99)
+remove(x)	Удаляет первый совпадающий элемент	loend.remove(25)
+pop(i)	Удаляет и возвращает элемент	loend.pop()
+index(x)	Возвращает индекс элемента	loend.index(30)
+count(x)	Считает, сколько раз элемент встречается	loend.count(10)
+sort()	Сортирует список	loend.sort()
+reverse()	Переворачивает порядок элементов	loend.reverse()
+clear()	Очищает список	loend.clear()
+
+⚠️ Большинство методов изменяют список на месте, новый список создавать не нужно.
+
+Примеры использования
+s = [12, 13, 13, 15]
+
+print(s.count(13))  # 2
+print(s.index(12))  # 0
+
+s.insert(2, -1)
+print(s)            # [12, 13, -1, 13, 15]
+
+s.remove(13)
+print(s)            # [12, -1, 13, 15]
+
+s.sort()
+print(s)            # [-1, 12, 13, 15]
+
+s.reverse()
+print(s)            # [15, 13, 12, -1]
+
+s.clear()
+print(s)            # []
+
+Генерация списков (list comprehension)
+s3 = [c * 3 for c in 'list']
+print(s3)  # ['lll', 'iii', 'sss', 'ttt']
+
+
+Создаёт новый список, где каждый элемент — результат выражения c * 3.
+
+Полезные функции для списков с числами
+numbrid = [3, 10, 1]
+
+print(max(numbrid))  # 10  → наибольший элемент
+print(min(numbrid))  # 1   → наименьший элемент
+print(sum(numbrid))  # 14  → сумма всех элементов
+
+
+💡 Важно:
+Списки гибкие и удобные, но для быстрого и однородного хранения больших количеств чисел лучше использовать массивы (arrays). Для большинства задач Python списки подходят идеально.
+
+
+
+
+🧩 Mis on list Pythonis?
+List ehk loend on andmestruktuur, mis võimaldab hoida mitut väärtust ühes muutujas.
+See on järjestatud ja muudetav (mutable) kogum objektidest — see tähendab, et sa saad lisada, eemaldada või muuta elemente pärast listi loomist.
+
+Olulised omadused
+Omadus	Selgitus
+Järjestatud	Igal elemendil on oma kindel koht (indeks alates 0).
+Muudetav	Elementide lisamine, eemaldamine ja muutmine on lubatud.
+Võib sisaldada erinevat tüüpi elemente	Näiteks arve, sõnesid, teisi liste jms.
+Indekseeritav	Elementidele pääseb ligi indeksite kaudu.
+🔧 Listi loomine
+Listi saab luua mitmel viisil:
+
+# Tühi list
+s1 = []
+print(s1)   # []
+
+# List elementidega
+s2 = ['l', 'i', 's', 't', 2]
+print(s2)   # ['l', 'i', 's', 't', 2]
+
+# Funktsiooniga list()
+s3 = list('list')
+print(s3)   # ['l', 'i', 's', 't']
+🧮 Listi elemendid ja indeksid
+loend = [10, 20, 30, 40]
+print(loend[0])   # esimene element → 10
+print(loend[-1])  # viimane element → 40
+
+loend[1] = 25     # muudame teise elemendi väärtuse
+print(loend)      # [10, 25, 30, 40]
+⚙️ Levinumad meetodid
+Meetod	Kirjeldus	Näide
+append(x)	Lisab elemendi lõppu	loend.append(5)
+extend(L)	Lisab kõik teise listi elemendid lõppu	loend.extend([6,7])
+insert(i, x)	Lisab elemendi kindlale kohale	loend.insert(1, 99)
+remove(x)	Kustutab esimese vastava elemendi	loend.remove(25)
+pop(i)	Eemaldab ja tagastab elemendi	loend.pop()
+index(x)	Tagastab elemendi indeksi	loend.index(30)
+count(x)	Loendab, mitu korda väärtus esineb	loend.count(10)
+sort()	Sorteerib listi	loend.sort()
+reverse()	Pöörab järjekorra ümber	loend.reverse()
+clear()	Tühjendab listi	loend.clear()
+📌 NB! Enamik neist muudavad listi otse — uut muutujat pole vaja luua.
+
+🧰 Näited
+s = [12, 13, 13, 15]
+
+print(s.count(13))  # 2
+print(s.index(12))  # 0
+
+s.insert(2, -1)
+print(s)            # [12, 13, -1, 13, 15]
+
+s.remove(13)
+print(s)            # [12, -1, 13, 15]
+
+s.sort()
+print(s)            # [-1, 12, 13, 15]
+
+s.reverse()
+print(s)            # [15, 13, 12, -1]
+
+s.clear()
+print(s)            # []
+🧠 Listide genereerimine (list comprehension)
+Python võimaldab luua uusi liste kompaktselt:
+
+s3 = [c * 3 for c in 'list']
+print(s3)  # ['lll', 'iii', 'sss', 'ttt']
+See loob uue listi, kus iga elemendi väärtus saadakse tehega c * 3.
+
+⚡ Tähtis teada
+Listid on paindlikud, aga mõnikord vajatakse kiiremat ja ühtlase tüübi struktuuri — siis kasutatakse massiive (arrays).
+
+Listide kasutamine sobib enamike igapäevaste Python-programmide jaoks.
+
+Funktsioonid listidega, kus on arvud
+max()
+Leiab suurima arvu listis.
+
+numbrid = [3, 10, 1]
+print(max(numbrid))  # 10
+min()
+Leiab väikseima arvu.
+
+print(min(numbrid))  # 1
+sum()
+Arvutab kõik arvud kokku.
+
+print(sum(numbrid))  # 14

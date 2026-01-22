@@ -1,0 +1,200 @@
+﻿💾 Python: Работа с текстовыми файлами и папками
+1. Открытие и закрытие файла
+
+Для работы с файлом его нужно сначала открыть функцией open().
+После окончания работы файл нужно закрыть методом .close().
+
+A. Режимы открытия файла (mode)
+
+Второй аргумент функции open() определяет, как будет работать с файлом.
+
+Режим	Кратко	Назначение	Внимание
+Чтение	'r'	Только для чтения	Нельзя записывать в файл
+Запись	'w'	Запись; создаёт новый файл	Если файл с таким именем существует, старый удаляется
+Добавление	'a'	Открывает файл и добавляет новые данные в конец	Существующий контент не удаляется
+B. Автоматическое закрытие файла (with)
+
+Рекомендуется использовать конструкцию:
+
+with open('file.txt', 'r') as f:
+    print(f.read())  # читаем весь файл и выводим на экран
+
+
+Файл автоматически закроется после выхода из блока with.
+
+Можно читать файл построчно:
+
+with open('file.txt', 'r') as f:
+    for line in f:
+        print(line.strip())
+
+2. Чтение и запись файлов
+A. Методы чтения
+Метод	Описание
+file.read(n)	Читает n символов. Если n не указан, читает весь файл
+file.readline(n)	Читает одну строку, максимум n символов
+file.readlines(n)	Читает n строк файла
+B. Сохранение в список
+def read_file(file: str) -> list:
+    f = open(file, 'r', encoding="utf-8-sig")
+    lst = []
+    for line in f:
+        lst.append(line.strip())  # убираем \n
+    f.close()
+    return lst
+
+C. Запись списка в файл
+def write_to_file(file: str, lst: list):
+    f = open(file, 'w', encoding="utf-8-sig")
+    for line in lst:
+        f.write(line + '\n')  # добавляем перенос строки
+    f.close()
+
+3. Системные функции и работа с папками
+A. Просмотр методов объекта (dir())
+import os
+f = open('file.txt', 'r')
+print(dir(f))  # вывод всех методов объекта файла (например: read, close)
+f.close()
+
+B. Взаимодействие с ОС (os)
+Функция	Описание
+os.getcwd()	Текущая рабочая директория
+os.listdir(path)	Список файлов и папок в директории
+os.path.exists(path)	Проверка существования файла или папки (True/False)
+os.path.join()	Корректное объединение путей (Windows/Linux)
+os.path.getsize()	Размер файла
+os.remove() / os.rename()	Удаление или переименование файла
+os.system()	Выполнение системной команды
+os.environ	Чтение переменных окружения
+C. Поиск файлов по расширению (glob)
+import glob
+
+# все файлы с расширением .txt в текущей папке
+txt_files = glob.glob('*.txt')
+print("Найденные текстовые файлы:", txt_files)
+
+
+Используются wildcard-символы:
+
+* — заменяет любое количество символов
+
+? — заменяет ровно один символ
+
+📝 Полезные методы для работы с текстом
+Метод	Назначение	Пример использования
+.strip()	Убирает пробелы и \n с концов	Очистка пользовательского ввода
+.split(sep)	Делит строку на части	Парсинг CSV или /etc/passwd
+.startswith() / .endswith()	Проверка начала/конца строки	Определение типа файла или комментария
+.replace()	Замена текста	Изменение конфигураций
+.isdigit()	Проверка на число	Валидация портов или частей IP
+💡 Итого
+
+open(), read(), write(), close() — базовые функции для работы с файлами.
+
+with — удобно для автоматического закрытия.
+
+os и glob — позволяют работать с папками и искать файлы.
+
+.strip(), .split(), .replace() — полезны для текстовой обработки.
+
+
+
+
+
+
+
+
+
+💾 Python: Töö Tekstifailidega ja Kaustadega
+1. Faili Avamine ja Sulgemine
+Failiga töö alustamiseks tuleb see avada, kasutades funktsiooni open(). Pärast töö lõpetamist on vaja see sulgeda meetodiga .close().
+
+A. Faili Avamise Režiimid (Mode)
+Teine argument funktsioonis open() määrab, kuidas faili töödeldakse.
+
+Režiim	Lühinimi	Eesmärk	Tähelepanu!
+Lugemine	'r'	Ainult lugemiseks.	Faili kirjutada ei saa.
+Kirjutamine	'w'	Kirjutamiseks; luuakse uus fail.	Kui sama nimega fail on olemas, kustutatakse vana.
+Lisamine	'a'	Avatakse fail ning kirjutatakse uus info faili lõppu.	Olemasolevat sisu ei kustutata.
+B. Automaatne Sulgemine (with)
+Soovitatav on kasutada with open(...) as f: lauset.
+
+See muudab failide töötlemise kergemaks, sest avatud failid suletakse automaatselt.
+
+Kood on lihtsam, kuna ei pea püüdma erindeid try-finally blokkidega.
+
+with open('file.txt', 'r') as f:
+    print(f.read()) # loeme terve faili ja kuvame ekraanile
+Sama meetodi abil saab ka faili ridu ükshaaval läbi käia.
+
+2. Failist Lugemine ja Kirjutamine
+A. Lugemismeetodid
+Meetod	Kirjeldus
+file.read(n)	Loeb failist hulga $n$ suuruses tähti. Kui $n$ on tühi, loeb terve faili.
+file.readline(n)	Loeb failist tekstirea, kuid mitte rohkem kui $n$ märki.
+file.readlines(n)	Loeb failist $n$ tekstirida.
+B. Salvestamine Järjendisse
+Teksti saab failist salvestada järjendisse (listi). Tuleb kasutada f.close() ja eemaldada \n sümbolid (.strip()).
+
+def Loe_failist(fail: str) -> list:
+    f = open(fail, 'r', encoding="utf-8-sig")
+    jarjend = []
+    for rida in f:
+        jarjend.append(rida.strip())
+    f.close()
+    return jarjend
+C. Järjendist Faili Kirjutamine
+Järjendite elemendid salvestatakse faili, lisades iga rea järele reavahetuse (\n).
+
+def Kirjuta_failisse(fail: str, jarjend: list):
+    f = open(fail, 'w', encoding="utf-8-sig")
+    for line in jarjend:
+        f.write(line + '\n')
+    f.close()
+3. Süsteemifunktsioonid ja Kaustad
+Failidega töötamine laieneb ka failisüsteemi ja kaustade haldamisele, kasutades mooduleid os ja glob.
+
+A. Objekti Meetodite Avastamine (dir())
+Funktsioon dir() on kasulik meetod, et näha, millised meetodid ja atribuudid on Pythoni objektil (nt. avatud failiobjektil) saadaval.
+
+import os
+f = open('file.txt', 'r')
+print(dir(f)) # Kuvab kõik failiobjekti meetodid (nt. read, close)
+f.close()
+B. Operatsioonisüsteemi Interaktsioon (os)
+Moodul os annab ligipääsu operatsioonisüsteemi funktsioonidele (Windows, macOS, Linux).
+
+os.getcwd(): Tagastab praeguse töökataloogi (Current Working Directory).
+
+os.listdir(tee): Tagastab listi failidest ja kaustadest antud asukohas.
+
+os.path.exists(tee): Kontrollib, kas antud fail või kaust on olemas (True/False).
+
+C. Failide Otsing Laienduse Järgi (glob)
+Moodul glob on mugav, kui on vaja leida kõik failid kaustas, mis vastavad kindlale mustrile (nt. laiendusele).
+
+Kasutatakse wildcard sümboleid: * (asendab mistahes hulga märke) ja ? (asendab täpselt ühe märgi).
+
+import glob
+
+# Leiab listina kõik failid praeguses kaustas, mis lõppevad .txt-ga
+txt_failid = glob.glob('*.txt')
+print("Leitud tekstifailid:", txt_failid)
+Koondtabel: Failid, Tekst ja Süsteem
+Valdkond	Funktsioon / Meetod	Kirjeldus	Praktiline kasutus IT-töös
+Failihaldus	open(), .write(), .close()	Failide loomine, täitmine ja sulgemine.	Raportite ja logifailide loomine.
+.read(), .readlines()	Faili sisu lugemine korraga või listina.	Konfiguratsioonifailide lugemine.
+.seek(0), .tell()	Kursori liigutamine ja asukoha kontroll.	Suurte failide osaline lugemine.
+Tekstitöötlus	.strip()	Tühikute ja \n eemaldamine otstest.	Sisendi puhastamine enne võrdlemist.
+.split(sep)	Teksti tükeldamine osadeks.	CSV või /etc/passwd stiilis failide parsimine.
+.startswith() / .endswith()	Alguse ja lõpu kontroll.	Failitüüpide või ridade (nt kommentaarid #) tuvastus.
+.replace()	Tekstiosade asendamine.	Konfiguratsioonis väärtuste muutmine.
+.isdigit()	Kontrollib, kas tegu on numbriga.	Portide või IP-aadressi osade valideerimine.
+Süsteem (os)	os.listdir()	Kausta sisu loetlemine.	Skript, mis töötleb kõiki faile kataloogis.
+os.path.exists()	Kontrollib faili/kausta olemasolu.	Vigade vältimine enne faili avamist.
+os.path.join()	Ühendab teed (path) korrektselt.	Ristplatvormiline kood (Windows vs Linux).
+os.path.getsize()	Faili suuruse kontroll.	Kettaruumi seire ja suurte logide leidmine.
+os.remove() / os.rename()	Kustutamine ja ümbernimetamine.	Logide roteerimine ja ajutiste failide puhastus.
+os.system()	Süsteemi käsu käivitamine.	Võrgu testimine (ping) või teenuste taaskäivitus.
+os.environ	Keskkonnamuutujate lugemine.	API-võtmete või süsteemiteede hankimine.

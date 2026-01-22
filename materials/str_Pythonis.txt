@@ -1,0 +1,254 @@
+﻿🧵 Что такое string в Python?
+String (по-эстонски sõne) — это текстовый тип данных, который состоит из символов: букв, цифр, пробелов, специальных знаков и т.д.
+Строки используются для хранения и обработки текста.
+
+🔡 Создание строки
+Строки можно создавать разными способами, используя кавычки:
+
+S1 = 'Привет'
+S2 = "Мир"
+S3 = '''Текст в тройных кавычках'''
+S4 = """Может быть и на нескольких строках"""
+
+
+🪄 Специальные символы (escape-последовательности)
+Они позволяют добавлять в текст специальные символы:
+
+\n   перевод строки        "Привет\nМир"
+\t   табуляция             "Привет\tМир"
+\\   обратный слеш         "C:\\Users\\test"
+\'   одинарная кавычка     'Это \'текст\''
+\"   двойная кавычка       "Это \"текст\""
+
+
+Сырая строка (raw string) не обрабатывает специальные символы:
+
+S = r"C:\temp\new"
+print(S)  # C:\temp\new
+
+
+💡 Основные операции со строками
+
+Склеивание           'Привет ' + 'Мир'        → 'Привет Мир'
+Повторение           'ха' * 3                  → 'хахаха'
+Длина строки         len('Python')             → 6
+Доступ к символу     'Python'[0]               → 'P'
+Срез (slice)         'Python'[1:4]             → 'yth'
+
+
+🔍 Поиск и замена
+
+find()      — ищет первое вхождение, либо возвращает -1
+'python'.find('th') → 2
+
+rfind()     — ищет последнее вхождение
+'banana'.rfind('a') → 5
+
+index()     — как find(), но вызывает ошибку, если не найдено
+'apple'.index('p') → 1
+
+replace(a, b) — заменяет одну подстроку на другую
+'привет'.replace('п', 'П') → 'Привет'
+
+
+🧱 Разделение и объединение текста
+
+split(sep)     — разбивает строку на части
+'a,b,c'.split(',') → ['a', 'b', 'c']
+
+' '.join(list) — объединяет элементы списка в строку
+' '.join(['Привет', 'мир']) → 'Привет мир'
+
+
+🧾 Функции проверки
+
+isalpha()   — все символы буквы
+'Привет'.isalpha() → True
+
+isdigit()   — все символы цифры
+'123'.isdigit() → True
+
+isalnum()   — только буквы или цифры
+'Привет123'.isalnum() → True
+
+islower()   — все буквы в нижнем регистре
+'привет'.islower() → True
+
+isupper()   — все буквы в верхнем регистре
+'ПРИВЕТ'.isupper() → True
+
+isspace()   — только пробелы или табуляции
+' '.isspace() → True
+
+istitle()   — каждое слово начинается с заглавной буквы
+'Привет Мир'.istitle() → True
+
+
+🔤 Изменение регистра букв
+
+upper()        — нижний → верхний регистр
+'привет'.upper() → 'ПРИВЕТ'
+
+lower()        — верхний → нижний регистр
+'Привет'.lower() → 'привет'
+
+capitalize()  — заглавной только первая буква
+'python'.capitalize() → 'Python'
+
+title()       — первая буква каждого слова заглавная
+'привет мир'.title() → 'Привет Мир'
+
+swapcase()    — меняет регистр местами
+'Привет'.swapcase() → 'пРИВЕТ'
+
+
+✂️ Удаление пробелов и выравнивание
+
+strip()     — убирает пробелы в начале и конце
+' текст '.strip() → 'текст'
+
+lstrip()    — убирает слева
+' текст'.lstrip() → 'текст'
+
+rstrip()    — убирает справа
+'текст '.rstrip() → 'текст'
+
+center(w,f) — выравнивание по центру
+'тек'.center(9, '-') → '---тек---'
+
+ljust(w,f)  — выравнивание влево
+'тек'.ljust(6, '.') → 'тек...'
+
+rjust(w,f)  — выравнивание вправо
+'тек'.rjust(6, '.') → '...тек'
+
+zfill(w)    — добавляет нули слева
+'42'.zfill(5) → '00042'
+
+
+🧩 Полезные дополнительные операции
+
+count(x)        — считает количество вхождений
+'banana'.count('a') → 3
+
+startswith(x)  — начинается ли строка с указанного текста
+'Python'.startswith('Py') → True
+
+endswith(x)    — заканчивается ли строка указанным текстом
+'Python'.endswith('on') → True
+
+partition(x)   — делит строку на 3 части: до, разделитель, после
+'email@domain.ee'.partition('@')
+→ ('email', '@', 'domain.ee')
+
+rpartition(x)  — то же самое, но поиск справа
+'a-b-c'.rpartition('-')
+→ ('a-b', '-', 'c')
+
+
+🔢 Коды символов
+
+В Python можно узнать ASCII или Unicode код символа:
+
+print(ord('A'))  # 65
+print(chr(65))   # 'A'
+
+
+✅ Итог
+
+String        — последовательность символов (текст)
+Методы        — функции, применяемые к строкам
+Основные операции — склеивание, разделение, поиск, изменение
+Спецсимволы   — \n, \t, \\, и др.
+ASCII/Unicode — числовой код символа и обратное преобразование
+
+
+
+
+
+
+🧵 Mis on string Pythonis?
+String (eesti keeles sõne) on tekstiline andmetüüp, mis koosneb märkidest — tähtedest, numbritest, tühikutest, sümbolitest jne.
+Stringe kasutatakse teksti salvestamiseks ja töötlemiseks.
+
+🔡 Stringi loomine
+Stringe saab luua mitmel viisil, kasutades jutumärke:
+
+S1 = 'Tere'
+S2 = "Maailm"
+S3 = '''Kolme jutumärgiga tekst'''
+S4 = """Võib olla ka mitmel real"""
+🪄 Erimärgid (escape-sequences)
+Need võimaldavad lisada teksti erisümboleid:
+
+Sümbol	Tähendus	Näide
+\n	reavahetus	"Tere\nMaailm"
+\t	tabulatsioon	"Tere\tMaailm"
+\\	kaldkriips	"C:\\Users\\test"
+\'	ülakoma	'See on \'tekst\''
+\"	jutumärk	"See on \"tekst\""
+Toores string (raw string) ei tõlgenda neid erimärke:
+
+S = r"C:\temp\new"
+print(S)  # C:\temp\new
+💡 Stringide põhitoimingud
+Toiming	Näide	Tulemus
+Liitmine (ühendamine)	'Tere ' + 'Maailm'	'Tere Maailm'
+Kordamine	'ha' * 3	'hahaha'
+Pikkus	len('Python')	6
+Elemendi leidmine	'Python'[0]	'P'
+Lõikamine (slice)	'Python'[1:4]	'yth'
+🔍 Otsing ja asendamine
+Funktsioon	Kirjeldus	Näide
+find()	Leiab alamstringi esimese esinemise või tagastab -1	'python'.find('th') → 2
+rfind()	Otsib viimast esinemist	'banana'.rfind('a') → 5
+index()	Sarnane find, aga annab vea, kui ei leita	'apple'.index('p') → 1
+replace(a, b)	Asendab alamstringi teisega	'tere'.replace('t', 'T') → 'Tere'
+🧱 Teksti jagamine ja ühendamine
+Funktsioon	Selgitus	Näide
+split(sep)	Jagab stringi osadeks	'a,b,c'.split(',') → ['a','b','c']
+' '.join(list)	Ühendab listi elemendid stringiks	' '.join(['Tere', 'maailm']) → 'Tere maailm'
+🧾 Kontrollfunktsioonid
+Funktsioon	Kontrollib, kas...	Näide
+isalpha()	kõik sümbolid on tähed	'Tere'.isalpha() → True
+isdigit()	kõik sümbolid on numbrid	'123'.isdigit() → True
+isalnum()	ainult tähed või numbrid	'Tere123'.isalnum() → True
+islower()	kõik väiketähed	'tere'.islower() → True
+isupper()	kõik suurtähed	'TERE'.isupper() → True
+isspace()	ainult tühikud või tabulaatorid	' '.isspace() → True
+istitle()	iga sõna algab suure tähega	'Tere Maailm'.istitle() → True
+🔤 Tähtede muutmine
+Funktsioon	Toiming	Näide
+upper()	Väiketähed → suurtähed	'tere'.upper() → 'TERE'
+lower()	Suurtähed → väiketähed	'Tere'.lower() → 'tere'
+capitalize()	Ainult esimene täht suureks	'python'.capitalize() → 'Python'
+title()	Iga sõna esimene täht suureks	'tere maailm'.title() → 'Tere Maailm'
+swapcase()	Suured ↔ väikesed tähed	'Tere'.swapcase() → 'tERE'
+✂️ Tühikute eemaldamine ja joondamine
+Funktsioon	Kirjeldus	Näide
+strip()	Eemaldab tühikud algusest ja lõpust	' tekst '.strip() → 'tekst'
+lstrip()	Eemaldab vasakult	' tekst'.lstrip() → 'tekst'
+rstrip()	Eemaldab paremalt	'tekst '.rstrip() → 'tekst'
+center(w, f)	Keskele joondamine täitesümboliga	'tek'.center(9, '-') → '---tek---'
+ljust(w, f)	Vasakule joondamine	'tek'.ljust(6, '.') → 'tek...'
+rjust(w, f)	Paremale joondamine	'tek'.rjust(6, '.') → '...tek'
+zfill(w)	Lisab nullid ette	'42'.zfill(5) → '00042'
+🧩 Kasulikud lisaoperatsioonid
+Funktsioon	Selgitus	Näide
+count(x)	Loendab esinemisi	'banana'.count('a') → 3
+startswith(x)	Kas algab antud sõnega	'Python'.startswith('Py') → True
+endswith(x)	Kas lõpeb antud sõnega	'Python'.endswith('on') → True
+partition(x)	Jagab stringi kolmeks osaks: enne, sõna, pärast	'email@domeen.ee'.partition('@') → ('email', '@', 'domeen.ee')
+rpartition(x)	Sama, aga otsib tagantpoolt	'a-b-c'.rpartition('-') → ('a-b', '-', 'c')
+🔢 Märkide koodid
+Pythonis saab iga märgi ASCII või Unicode väärtuse teada:
+
+print(ord('A'))  # 65
+print(chr(65))   # 'A'
+✅ Kokkuvõte
+Mõiste	Selgitus
+String	Märgijada ehk tekstiline väärtus
+Meetodid	Funktsioonid, mida saab rakendada stringidele
+Olulised toimingud	Liitmine, jagamine, otsimine, muutmine
+Erimärgid	\n, \t, \\, jne
+ASCII/Unicode	Märgi numbriline väärtus ja vastupidine teisendus

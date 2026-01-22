@@ -1,0 +1,244 @@
+﻿🧩 Функции в Python
+
+Что такое функция?
+
+Функция — это повторно используемый блок кода, который выполняет определённую задачу.
+Функция может:
+
+принимать данные (аргументы),
+
+выполнять вычисления или действия,
+
+возвращать значение.
+
+Общая структура функции
+def имя_функции(параметры):
+    """Описание функции (docstring)"""
+    действия
+    return значение
+
+
+Пояснение:
+
+def — ключевое слово для определения функции
+
+имя_функции — название функции для вызова
+
+(параметры) — значения, которые передаются в функцию (может быть пусто)
+
+: — завершение заголовка функции
+
+отступы — все команды внутри функции должны быть с отступом
+
+return — возвращает результат. Если return нет → функция возвращает None.
+
+Простой пример
+def приветствие():
+    print("Добро пожаловать!")
+
+приветствие()  # вызов функции
+
+Функция, возвращающая значение
+def сумма(a, b):
+    return a + b
+
+результат = сумма(2, 3)
+print(результат)  # 5
+
+Функция с текстом
+def объединить_текст(a, b):
+    return a + b
+
+print(объединить_текст('Привет', ' мир'))  # 'Привет мир'
+
+Функция, возвращающая несколько значений
+def сумма_и_произведение(a, b):
+    s = a + b
+    p = a * b
+    return s, p
+
+сумма, произведение = сумма_и_произведение(5, 4)
+print(сумма)        # 9
+print(произведение)  # 20
+
+
+Возвращаемые значения можно «распаковать» в несколько переменных.
+
+Функция с пользовательским вводом
+def умножить(a, b):
+    return a * b
+
+x = int(input("Введите первое число: "))
+y = int(input("Введите второе число: "))
+
+print("Произведение:", умножить(x, y))
+
+Docstring — документирование функции
+def умножить(a: int, b: int) -> int:
+    """Возвращает произведение двух чисел."""
+    return a * b
+
+help(умножить)  # выводит описание функции
+
+Анонимные функции (lambda)
+
+Короткие однострочные функции, без имени
+
+Не используют return — результат возвращается автоматически
+
+сумма = lambda a, b: a + b
+print(сумма(3, 4))  # 7
+
+умножить = lambda x, y: x * y
+print(умножить(2, 5))  # 10
+
+объединить = lambda a, b: a + b
+print(объединить('a', 'b'))  # 'ab'
+
+Важно
+
+Функция может возвращать числа, строки, списки или даже другие функции
+
+Аргументы должны быть в правильном порядке и типе
+
+Имя функции должно быть уникальным и понятным
+
+Итоговая таблица
+Понятие	Объяснение
+Функция	Повторно используемый блок кода для конкретной задачи
+def	Ключевое слово для определения функции
+return	Возвращает результат функции
+None	Значение по умолчанию, если return отсутствует
+Docstring	Описание функции в тройных кавычках
+lambda	Короткая однострочная функция
+Аргументы	Значения, которые функция использует для работы
+Пример полной программы
+def приветствие(имя):
+    """Приветствует пользователя по имени."""
+    return "Привет, " + имя + "!"
+
+имя = input("Введите своё имя: ")
+print(приветствие(имя))
+
+
+Функция принимает имя пользователя и возвращает приветствие.
+
+
+
+
+
+
+🧩 Funktsioonid Pythonis
+🔹 Mis on funktsioon?
+Funktsioon on koodiplokk, mis täidab kindla ülesande ja mida saab korduvalt kasutada.
+Funktsioon võib:
+
+vastu võtta andmeid (argumendid),
+
+täita arvutusi või toiminguid,
+
+ja tagastada väärtuse.
+
+🧱 Funktsiooni üldine struktuur
+def funktsiooni_nimi(parameetrid):
+    """Funktsiooni kirjeldus (docstring)"""
+    tegevused
+    return väärtus
+🧩 Selgitus
+def – märksõna, millega funktsioon algab
+
+funktsiooni_nimi – nimi, mille järgi saab funktsiooni hiljem välja kutsuda
+
+(parameetrid) – väärtused, mida funktsioonile edasi antakse (võib olla ka tühjad sulud)
+
+: – funktsiooni päise lõpus olev koolon
+
+taanded (indentatsioon) – kõik funktsiooni käsud peavad olema taandega
+
+return – lõpetab funktsiooni ja tagastab tulemuse
+
+💡 Kui funktsioonis pole return lauset, tagastab see automaatselt väärtuse None.
+
+✍️ Lihtne näide
+def tervita():
+    print("Tere tulemast!")
+Funktsiooni väljakutsumine:
+
+tervita()
+🧮 Funktsioon, mis tagastab väärtuse
+def summa(a, b):
+    return a + b
+
+tulemus = summa(2, 3)
+print(tulemus)  # 5
+📘 Funktsioon võib tagastada väärtuse, mida saab salvestada muutujasse või kohe kasutada.
+
+🔤 Funktsioon töötab ka tekstidega
+def liida_tekst(a, b):
+    return a + b
+
+print(liida_tekst('Tere', ' maailm'))  # 'Tere maailm'
+🔢 Funktsioon, mis tagastab mitu väärtust
+def summa_ja_korrutis(a, b):
+    s = a + b
+    k = a * b
+    return s, k
+
+summa, korrutis = summa_ja_korrutis(5, 4)
+print(summa)     # 9
+print(korrutis)  # 20
+💡 Tagastatud väärtused saab „lahti pakkida“ mitmeks muutujaks.
+
+🧾 Funktsiooni väljakutsumine koos kasutaja sisendiga
+def korruta(a, b):
+    return a * b
+
+x = int(input("Sisesta esimene arv: "))
+y = int(input("Sisesta teine arv: "))
+
+print("Korrutis on:", korruta(x, y))
+📘 Funktsiooni dokumenteerimine
+Funktsiooni alguses võib olla dokumentatsioonirida ehk docstring, mis selgitab, mida funktsioon teeb.
+See kuvatakse näiteks help() käsu abil.
+
+def korruta(a: int, b: int) -> int:
+    """Tagastab kahe arvu korrutise."""
+    return a * b
+⚡ Anonüümsed funktsioonid (lambda)
+Lambda-funktsioon on lühike üherealine funktsioon, millel pole nime.
+See töötab samamoodi nagu def, aga on kompaktsem ja kiirem lihtsate arvutuste jaoks.
+
+Näide 1:
+summa = lambda a, b: a + b
+print(summa(3, 4))  # 7
+Näide 2:
+korruta = lambda x, y: x * y
+print(korruta(2, 5))  # 10
+Näide 3 (teksti liitmine):
+ühenda = lambda a, b: a + b
+print(ühenda('a', 'b'))  # 'ab'
+💡 lambda funktsioonides ei kasutata return lauset — tulemus tagastatakse automaatselt.
+
+🧠 Olulised märkused
+Funktsioon võib olla lihtne või keeruline – see võib tagastada arve, sõnesid, loendeid või isegi teisi funktsioone.
+
+Funktsiooni argumendid peavad olema samas järjekorras ja tüübis nagu määratud.
+
+Funktsiooni nimi peab olema ainulaadne ning tähenduslik.
+
+✅ Kokkuvõte
+Mõiste	Selgitus
+Funktsioon	Korduvkasutatav koodiplokk kindla ülesande täitmiseks
+def	Märksõna funktsiooni määratlemiseks
+return	Tagastab funktsiooni tulemuse
+None	Vaikeväärtus, kui return puudub
+Docstring	Funktsiooni kirjeldus kolmekordsete jutumärkide vahel
+lambda	Lühivorm üherealiste funktsioonide jaoks
+Argumendid	Väärtused, mida funktsioon kasutab tööks
+💬 Näide terviklikust programmist
+def tervita(nimi):
+    """Tervitab kasutajat nime järgi."""
+    return "Tere, " + nimi + "!"
+
+nimi = input("Sisesta oma nimi: ")
+print(tervita(nimi))
