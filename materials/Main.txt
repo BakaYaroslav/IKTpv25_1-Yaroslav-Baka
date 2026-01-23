@@ -1,0 +1,27 @@
+from functions import *
+
+    while True:
+        print("\nMenüü")
+        print("Sisesta number")
+        print("1. Teksti sisestus ja .txt-faili genereerimine")
+        print("2. Kalkulaator")
+        print("3. Ruut")
+        print("0. Välju")
+
+        try:
+            choice = int(input("Valik: "))
+        except ValueError:
+            print("Vale valik!")
+            continue
+
+        if choice == 1:
+            txt_fail()
+        elif choice == 2:
+            kalkulaator()
+        elif choice == 3:
+            ruut()
+        elif choice == 0:
+            print("Programmi lõpetamine...")
+            break
+        else:
+            print("Vale valik!")

@@ -1,0 +1,88 @@
+import math
+
+def txt_fail():
+    print("Sisesta tekst:")
+    tekst = input()
+
+    file_path = "Fail.txt"
+    with open(file_path, "w", encoding="utf-8") as f:
+        f.write(tekst)
+
+    print("Fail loodud:", file_path)
+
+
+def kalkulaator():
+    print("\nVali tehe")
+    print("1. Liitmine")
+    print("2. Lahutamine")
+    print("3. Korrutamine")
+    print("4. Jagamine")
+    print("5. Ruutvõrrand")
+
+    valik = input("Valik: ")
+
+    if valik == "1":
+        liitmine()
+    elif valik == "2":
+        lahutamine()
+    elif valik == "3":
+        korrutamine()
+    elif valik == "4":
+        jagamine()
+    elif valik == "5":
+        ruutvorrand()
+    else:
+        print("Vale valik!")
+
+
+def liitmine():
+    a = float(input("Arv 1: "))
+    b = float(input("Arv 2: "))
+    print("Tulemus:", a + b)
+
+
+def lahutamine():
+    a = float(input("Arv 1: "))
+    b = float(input("Arv 2: "))
+    print("Tulemus:", a - b)
+
+
+def korrutamine():
+    a = float(input("Arv 1: "))
+    b = float(input("Arv 2: "))
+    print("Tulemus:", a * b)
+
+
+def jagamine():
+    a = float(input("Arv 1: "))
+    b = float(input("Arv 2: "))
+
+    if b != 0:
+        print("Tulemus:", a / b)
+    else:
+        print("Nulliga jagada ei saa")
+
+
+def ruutvorrand():
+    a = float(input("Sisesta a: "))
+    b = float(input("Sisesta b: "))
+    c = float(input("Sisesta c: "))
+
+    D = b ** 2 - 4 * a * c
+
+    if D > 0:
+        x1 = (-b + math.sqrt(D)) / (2 * a)
+        x2 = (-b - math.sqrt(D)) / (2 * a)
+        print(f"Lahendid: x1 = {x1}, x2 = {x2}")
+    elif D == 0:
+        x = -b / (2 * a)
+        print(f"Üks lahend: x = {x}")
+    else:
+        print("Lahendeid pole")
+
+
+def ruut():
+    suurus = int(input("Sisesta ruudu suurus: "))
+
+    for _ in range(suurus):
+        print("* " * suurus)
