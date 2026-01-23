@@ -1,0 +1,19 @@
+// OOP MAUI Sümbolimäng Klassidiagramm
+digraph {
+	MainPage [label="MainPage
+(UI ja sündmuste haldus)"]
+	Theme [label="Theme
+(teema: värvid, font)"]
+	Player [label="Player
+(mängija: nimi, sümbol)"]
+	Game [label="Game
+(mänguloogika, sündmused)"]
+	MainPage -> Theme [label="valib ja rakendab"]
+	MainPage -> Player [label="loob mängija"]
+	MainPage -> Game [label="käivitab mängu"]
+	Game -> Player [label="kasutab sümbolit"]
+	Game -> Theme [label="kasutab kujundust"]
+	Game -> MainPage [label="kutsub sündmusi:
+OnShowSymbol, OnHideSymbol,
+OnGameFinished"]
+}
